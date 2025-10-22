@@ -12,6 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 import { Oswald } from "next/font/google";
+import SkillzRevoFooter from "./components/Footer";
 const oswald = Oswald({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"], // choose weights you need
@@ -33,6 +34,8 @@ export default function RootLayout({ children }) {
       >
         {children}
       </body>
+      <SkillzRevoFooter/>
+
     </html>
   );
 }

@@ -40,12 +40,12 @@ const HeroSlider = () => {
   return (
     <div className="relative w-full h-[80vh] overflow-hidden">
       {/* Custom navigation buttons */}
-      <div className="absolute inset-y-0 left-0 flex items-center z-20 px-4">
+      <div className="absolute inset-y-0 left-0 flex items-center z-20 px-4 max-md:hidden">
         <div className="swiper-button-prev bg-white/60 hover:bg-white text-[#1d8fff] p-3 rounded-full backdrop-blur-md shadow cursor-pointer transition">
           <ChevronLeft className="w-6 h-6" />
         </div>
       </div>
-      <div className="absolute inset-y-0 right-0 flex items-center z-20 px-4">
+      <div className="absolute inset-y-0 right-0 flex items-center z-20 px-4 max-md:hidden">
         <div className="swiper-button-next bg-white/60 hover:bg-white text-[#1d8fff] p-3 rounded-full backdrop-blur-md shadow cursor-pointer transition">
           <ChevronRight className="w-6 h-6" />
         </div>

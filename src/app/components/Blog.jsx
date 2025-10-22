@@ -37,7 +37,7 @@ export default function BlogSlider() {
         >
           {posts.map((post) => (
             <SwiperSlide key={post.id}>
-              <div className="bg-white shadow-md border rounded-md m-2 p-2 flex h-full flex-col">
+              <div className="bg-white h-120 shadow-md border rounded-md m-2 p-2 flex flex-col">
                 {/* Image hidden for now */}
 
                 <img
@@ -47,7 +47,7 @@ export default function BlogSlider() {
                     post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
                   }
                   alt={post.title.rendered}
-                  className="w-full h-full rounded-md object-cover"
+                  className="w-full h-80 rounded-md object-cover"
                 />
                 <div className="">
                   <h3
@@ -76,7 +76,7 @@ export default function BlogSlider() {
         <a
           href="/blog"
           target="_blank"
-          className="text-orange-600 font-bold py-4 px-2 bg-white rounded-md mx-auto mt-2 w-fit block"
+          className="text-white bg-[#1d8fff] font-bold py-3 px-4 rounded-md mx-auto mt-2 w-fit block"
         >
           View All Blogs →
         </a>

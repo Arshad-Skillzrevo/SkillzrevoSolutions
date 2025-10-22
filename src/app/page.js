@@ -1,4 +1,5 @@
 import BlogSlider from "./components/Blog";
+import JobListPage from "./components/CareerSection";
 import ChannelPartnerProgram from "./components/ChannelPartnerProgram";
 import CorporateTraining from "./components/CorporateTraining";
 import SkillzRevoFooter from "./components/Footer";
@@ -19,7 +20,8 @@ export default function Home() {
       <WhyChooseSkillzRevo/>
       <SuccessStoriesTestimonials/>
       <BlogSlider/>
-      <SkillzRevoFooter/>
+      <JobListPage/>
+
     </>
   );
 }

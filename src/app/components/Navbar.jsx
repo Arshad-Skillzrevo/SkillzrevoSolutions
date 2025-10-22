@@ -19,30 +19,30 @@ const PRIMARY_BLUE = "#1d8fff";
 const SECONDARY_ORANGE = "#ff6900";
 
 const NAV_LINKS = [
-  { title: "Home", href: "#home" },
-  { title: "About Us", href: "#about-us" },
+  { title: "Home", href: "/" },
+  { title: "About Us", href: "https://academy.skillzrevo.com/about-skillzrevo" },
   {
     title: "Divisions",
     href: "#divisions",
     dropdown: [
-      { title: "Academy", href: "#academy" },
-      { title: "Staffing", href: "#staffing" },
-      { title: "Consulting", href: "#consulting" },
+      { title: "Academy", href: "https://academy.skillzrevo.com" },
+      { title: "Staffing", href: "https://www.skillzrevotalent.com/" },
+      { title: "Consulting", href: "https://consulting.skillzrevo.com" },
     ],
   },
-  { title: "Corporate Training", href: "#corporate-training" },
+  { title: "Corporate Training", href: "https://academy.skillzrevo.com/corporate-trainingcorporate-training" },
   {
     title: "Partner with us",
     href: "#partner",
     dropdown: [
-      { title: "Academy Partner", href: "#academy-partner" },
-      { title: "Staffing Partner", href: "#staffing-partner" },
-      { title: "Consulting Partner", href: "#consulting-partner" },
+      { title: "Academy Partner", href: "https://academy.skillzrevo.com/channel-partner" },
+      { title: "Staffing Partner", href: "https://www.skillzrevotalent.com/channel-partner" },
+      { title: "Consulting Partner", href: "https://consulting.skillzrevo.com/channel-partner/" },
     ],
   },
   // { title: "Work with us", href: "#work-with-us" },
   // { title: "Blogs", href: "#blogs" },
-  { title: "Contact us", href: "#contact-us" },
+  { title: "Contact us", href: "/contact-us" },
 ];
 
 export default function Navbar() {
@@ -191,7 +191,7 @@ export default function Navbar() {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-md text-white focus:outline-none focus:ring-2"
+                className="p-2 rounded-md text-blue-500 focus:outline-none focus:ring-2"
                 style={{ "--tw-ring-color": SECONDARY_ORANGE }}
               >
                 {isMobileMenuOpen ? (
