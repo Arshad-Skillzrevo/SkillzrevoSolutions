@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +11,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+import { Oswald } from "next/font/google";
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // choose weights you need
+  display: "swap",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -19,6 +26,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Navbar/>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
