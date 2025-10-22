@@ -59,12 +59,12 @@ export default function VerticalServices() {
             </div>
 
             <div className="mt-auto flex gap-3 justify-center flex-wrap">
-              <button className="px-6 py-2 rounded-full text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ff6900' }}>
-                Explore Courses →
-              </button>
-              <button className="px-6 py-2 rounded-full text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ff6900' }}>
+              <a href='https://academy.skillzrevo.com' className="px-6 py-2 rounded-full text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ff6900' }}>
+                Explore Our Academy
+              </a>
+              {/* <a className="px-6 py-2 rounded-full text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ff6900' }}>
                 New training Home Page Link →
-              </button>
+              </a> */}
             </div>
           </div>
 
@@ -110,12 +110,9 @@ export default function VerticalServices() {
             </div>
 
             <div className="mt-auto flex gap-3 justify-center flex-wrap">
-              <button className="px-6 py-2 rounded-full text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ff6900' }}>
-                Staffing Home Page Link →
-              </button>
-              <button className="px-6 py-2 rounded-full text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ff6900' }}>
-                Explore Staffing Solutions →
-              </button>
+              <a href='https://skillzrevotalent.com' className="px-6 py-2 rounded-full text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ff6900' }}>
+                Check Our Staffing Services
+              </a>
             </div>
           </div>
 
@@ -137,7 +134,7 @@ export default function VerticalServices() {
 
             <div className="mb-6">
               <p className="font-semibold text-gray-800 text-center mb-3">Services:</p>
-              <div className="flex flex-wrap gap-2 justify-center mb-4">
+              <div className="flex flex-wrap gap-1 justify-center mb-1">
                 <span className="px-4 py-2 bg-blue-50 text-gray-700 rounded text-sm border border-gray-200">
                   AI/ML Consulting
                 </span>
@@ -145,7 +142,7 @@ export default function VerticalServices() {
                   BI & Data Visualization
                 </span>
               </div>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="flex flex-wrap gap-1 justify-center">
                 <span className="px-4 py-2 bg-blue-50 text-gray-700 rounded text-sm border border-gray-200">
                   Cloud Advisory
                 </span>
@@ -173,12 +170,9 @@ export default function VerticalServices() {
             </div>
 
             <div className="mt-auto flex gap-3 justify-center flex-wrap">
-              <button className="px-6 py-2 rounded-full text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ff6900' }}>
-                Explore Consulting Services →
-              </button>
-              <button className="px-6 py-2 rounded-full text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ff6900' }}>
-                Consulting Home Page Link →
-              </button>
+              <a href='https://consulting.skillzrevo.com' className="px-6 py-2 rounded-full text-white font-semibold text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ff6900' }}>
+                Explore Our Consulting Services
+              </a>
             </div>
           </div>
         </div>

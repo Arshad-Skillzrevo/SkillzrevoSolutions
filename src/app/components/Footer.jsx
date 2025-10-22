@@ -17,13 +17,13 @@ export default function SkillzRevoFooter() {
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
             <button className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-md flex items-center gap-2 transition-all duration-300 hover:shadow-lg">
-              Talk to Our Experts <FaArrowRight className="text-sm" />
+             Our Academy <FaArrowRight className="text-sm" />
             </button>
             <button className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-md flex items-center gap-2 transition-all duration-300 hover:shadow-lg">
-              Request a Callback <FaArrowRight className="text-sm" />
+              Staffing Services <FaArrowRight className="text-sm" />
             </button>
             <button className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-md flex items-center gap-2 transition-all duration-300 hover:shadow-lg">
-              Download Company Profile PDF <FaArrowRight className="text-sm" />
+              Consulting Services <FaArrowRight className="text-sm" />
             </button>
           </div>
         </div>

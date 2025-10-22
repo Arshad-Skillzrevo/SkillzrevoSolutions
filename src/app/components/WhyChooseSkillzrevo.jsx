@@ -25,14 +25,14 @@ export default function WhyChooseSkillzRevo() {
 
         {/* Card Container */}
         <div className="bg-white rounded-2xl shadow-lg max-w-6xl w-full overflow-hidden border border-gray-200">
-          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x">
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y divide-x divide-gray-300">
             {stats.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                // transition={{ delay: i * 0.1 }}
                 whileHover={{ scale: 1.02 }}
                 className="flex flex-col items-center justify-center px-6 py-10 text-center space-y-2"
               >

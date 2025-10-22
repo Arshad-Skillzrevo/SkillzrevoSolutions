@@ -14,6 +14,7 @@ import {
   UserCircle,
 } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
+import Image from "next/image";
 
 const PRIMARY_BLUE = "#1d8fff";
 const SECONDARY_ORANGE = "#ff6900";
@@ -56,7 +57,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full sticky top-0 z-50">
+    <div className="w-full sticky top-0 z-50">
       {/* --- Top Bar --- */}
       <div className="hidden md:block bg-[#1d8fff] text-white text-xs">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-10">
@@ -126,10 +127,24 @@ export default function Navbar() {
         <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <a href="#" className="flex items-center text-3xl font-extrabold">
-              <span className="text-black">Skillz</span>
-              <span style={{ color: SECONDARY_ORANGE }}>Revo</span>.
-            </a>
+            <a href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">Skillzrevo</span>
+            <div className="relative w-[253px] h-[67px]">
+              <Image
+                fill
+                src="/Logo.webp"
+                alt="Skillzrevo"
+                className="object-contain"
+                fetchPriority="high"
+                quality={60}
+              />
+            </div>
+            {/* <img
+              alt="Skillzrevo"
+              src="/assets/Logo.webp"
+              className="lg:h-full h-12 lg:w-[160px]"
+            /> */}
+          </a>
 
             {/* --- Desktop Menu --- */}
             <div className="hidden lg:flex items-center space-x-2 h-full">
@@ -141,7 +156,7 @@ export default function Navbar() {
                   >
                     <button
                       onClick={() => toggleDropdown(i)}
-                      className="flex items-center text-gray-900 text-base font-medium px-4 py-2 hover:opacity-80 transition"
+                      className="flex items-center text-gray-900 text-sm font-medium px-2 py-2 hover:opacity-80 transition"
                     >
                       {link.title}
                       <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${
@@ -169,7 +184,7 @@ export default function Navbar() {
                   <a
                     key={link.title}
                     href={link.href}
-                    className="text-gray-900 text-base font-medium px-4 py-2 hover:opacity-80 transition"
+                    className="text-gray-900 text-sm font-medium px-2 py-2 hover:opacity-80 transition"
                   >
                     {link.title}
                   </a>
@@ -262,6 +277,6 @@ export default function Navbar() {
       </nav>
                 <RoleModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
-    </header>
+    </div>
   );
 }

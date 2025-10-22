@@ -37,7 +37,7 @@ export default function BlogSlider() {
         >
           {posts.map((post) => (
             <SwiperSlide key={post.id}>
-              <div className="bg-white h-120 shadow-md border rounded-md m-2 p-2 flex flex-col">
+              <div className="bg-white h-110 shadow-md border border-gray-200  rounded-md m-2 p-2 flex flex-col">
                 {/* Image hidden for now */}
 
                 <img
@@ -47,7 +47,7 @@ export default function BlogSlider() {
                     post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
                   }
                   alt={post.title.rendered}
-                  className="w-full h-80 rounded-md object-cover"
+                  className=" aspect-video rounded-md object-cover"
                 />
                 <div className="">
                   <h3

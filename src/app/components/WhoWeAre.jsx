@@ -21,7 +21,7 @@ const WhoWeAre = () => {
           {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {/* Mission */}
-            <div className="border-dashed border-2 rounded-lg px-4 py-8 gap-4 text-center flex flex-col items-center justify-center">
+            <div className="border-dashed border-2 border-gray-400 rounded-lg px-4 py-8 gap-4 text-center flex flex-col items-center justify-center">
               <div className="text-orange-600 text-3xl mb-2"><CircleCheckBig /></div>
               
               <h3 className="font-semibold text-[#1d8fff] mb-2">Our Mission</h3>
@@ -31,7 +31,7 @@ const WhoWeAre = () => {
             </div>
 
             {/* Vision */}
-            <div className="border-dashed border-2 rounded-lg px-4 py-8 gap-4 text-center flex flex-col items-center justify-center">
+            <div className="border-dashed border-2 border-gray-400 rounded-lg px-4 py-8 gap-4 text-center flex flex-col items-center justify-center">
               {/* <div className="text-orange-600 text-3xl mb-2">✔️</div>
                */}
               <div className="text-orange-600 text-3xl mb-2"><CircleCheckBig /></div>
@@ -43,7 +43,7 @@ const WhoWeAre = () => {
             </div>
 
             {/* Values */}
-            <div className="border-dashed border-2 rounded-lg px-4 py-8 gap-4 text-center flex flex-col items-center justify-center">
+            <div className="border-dashed border-2 border-gray-400 rounded-lg px-4 py-8 gap-4 text-center flex flex-col items-center justify-center">
               {/* <div className="text-orange-600 text-3xl mb-2">✔️</div> */}
               <div className="text-orange-600 text-3xl mb-2"><CircleCheckBig /></div>
 
@@ -57,9 +57,9 @@ const WhoWeAre = () => {
           </div>
 
           {/* Button */}
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
-                  Book a Free Consultation →
-                </button>
+          <a href='https://academy.skillzrevo.com/about-skillzrevo' className="w-fit bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
+                  About SkillzRevo →
+                </a>
         </div>
       </div>
     </section>

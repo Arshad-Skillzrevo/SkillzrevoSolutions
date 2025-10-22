@@ -14,6 +14,7 @@ export default function Home() {
     <>
       <HeroSlider/>
       <WhoWeAre/>
+      <div id="divisions"/>
       <VerticalServices/>
       <CorporateTraining/>
       <ChannelPartnerProgram/>

@@ -18,16 +18,21 @@ export default function ChannelPartnerProgram() {
       title: "Training Partners",
       icon: <FaUsersCog className="text-white text-2xl" />,
       color: "from-blue-500 to-blue-700",
+      link: "https://academy.skillzrevo.com/channel-partner",
     },
     {
       title: "Consulting Partners",
       icon: <FaUserTie className="text-white text-2xl" />,
       color: "from-orange-500 to-orange-600",
+      link: "https://skillzrevotalent.com/channel-partner",
+
     },
     {
       title: "Staffing Partners",
       icon: <FaHandshake className="text-white text-2xl" />,
       color: "from-green-500 to-green-700",
+      link: "https://consulting.skillzrevo.com/channel-partner",
+
     },
   ];
 
@@ -60,7 +65,8 @@ export default function ChannelPartnerProgram() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {partnerCategories.map((category, index) => (
-              <motion.div
+              <motion.a 
+              href={category.link}
                 key={index}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
@@ -74,7 +80,7 @@ export default function ChannelPartnerProgram() {
                 <h4 className="font-semibold text-gray-800 text-sm sm:text-base">
                   {category.title}
                 </h4>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </motion.div>
@@ -103,7 +109,7 @@ export default function ChannelPartnerProgram() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* <div className="flex flex-col sm:flex-row gap-4">
             <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-xl">
               Become a Partner
               <FaArrowRight className="text-sm" />
@@ -112,7 +118,7 @@ export default function ChannelPartnerProgram() {
               Partner Login
               <FaArrowRight className="text-sm" />
             </button>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </div>

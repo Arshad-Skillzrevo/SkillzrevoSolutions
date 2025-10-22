@@ -29,10 +29,10 @@ export default function SuccessStoriesTestimonials() {
               SUCCESS STORIES <br/> TESTIMONIALS
             </h2>
             
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg flex items-center gap-2 transition-colors shadow-lg hover:shadow-xl">
+            <a href='https://www.google.com/search?sa=X&rlz=1C1OPNX_enIN1124IN1124&sca_esv=7550878c098e0420&cs=1&biw=1680&bih=915&sxsrf=AE3TifNC7wTBpUPM-4SxqSawHBzRAHJ1wg:1756994365946&kgmid=/g/11wg7gxph5&q=SkillzRevo+Solutions+Pvt+Ltd&shndl=30&shem=lcuae,lsptbl1,uaasie&source=sh/x/loc/uni/m1/1&kgs=3365fa44e46a00fb&utm_source=lcuae,lsptbl1,uaasie,sh/x/loc/uni/m1/1#lrd=0x3bae15a01928a245:0x5b89af795985a099,1,,,,' className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg flex items-center gap-2 transition-colors shadow-lg hover:shadow-xl w-fit">
               See All Testimonials
               <FaArrowRight className="text-sm" />
-            </button>
+            </a>
           </div>
 
           {/* Right Section */}

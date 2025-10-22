@@ -68,14 +68,14 @@ export default function CorporateTraining() {
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg flex items-center transition-colors shadow-md">
-                  Book a Free Demo
+                <a href='https://academy.skillzrevo.com/corporate-training' className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg flex items-center transition-colors shadow-md">
+                  Check Details
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg flex items-center transition-colors shadow-md">
+                </a>
+                {/* <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg flex items-center transition-colors shadow-md">
                   Download Brochure
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
+                </button> */}
               </div>
             </div>
 
