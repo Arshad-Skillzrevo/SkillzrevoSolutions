@@ -19,7 +19,7 @@ export default function WhyChooseSkillzRevo() {
       <div className="absolute bottom-0 inset-x-0 h-1/2 bg-[#1d8fff]" />
 
       <div className="relative z-10 flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1d8fff] text-center heading-oswald mb-10">
+        <h2 className="text-4xl sm:text-5xl font-bold text-[#1d8fff] text-center heading-oswald mb-10">
           WHY CHOOSE SKILLZREVO?
         </h2>
 

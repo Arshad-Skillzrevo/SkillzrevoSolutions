@@ -21,7 +21,7 @@ const SECONDARY_ORANGE = "#ff6900";
 
 const NAV_LINKS = [
   { title: "Home", href: "/" },
-  { title: "About Us", href: "https://academy.skillzrevo.com/about-skillzrevo" },
+  { title: "About Us", href: "/about-skillzrevo" },
   {
     title: "Divisions",
     href: "#divisions",
@@ -57,7 +57,8 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full sticky top-0 z-50">
+    <>
+    <header className="w-full sticky top-0 z-50">
       {/* --- Top Bar --- */}
       <div className="hidden md:block bg-[#1d8fff] text-white text-xs">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-10">
@@ -277,6 +278,6 @@ export default function Navbar() {
       </nav>
                 <RoleModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
-    </div>
+    </header></>
   );
 }

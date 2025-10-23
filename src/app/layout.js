@@ -27,14 +27,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Navbar/>
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
+      <Navbar/>
+
         {children}
-      </body>
+
       <SkillzRevoFooter/>
+
+      </body>
 
     </html>
   );

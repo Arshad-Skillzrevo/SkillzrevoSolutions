@@ -8,7 +8,7 @@ const WhoWeAre = () => {
         
         {/* Left Side: Placeholder for Image */}
         
-        <img src="https://images.unsplash.com/photo-1622037022824-0c71d511ef3c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="" srcset="" className='w-1/2 rounded-r-2xl h-fit'/>
+        <img src="https://images.unsplash.com/photo-1622037022824-0c71d511ef3c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt=""  className='w-1/2 rounded-r-2xl h-fit hidden md:block'/>
 
         {/* Right Side: Text Content */}
         <div className="w-full px-10 md:w-1/2">
@@ -57,7 +57,7 @@ const WhoWeAre = () => {
           </div>
 
           {/* Button */}
-          <a href='https://academy.skillzrevo.com/about-skillzrevo' className="w-fit bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
+          <a href='/about-skillzrevo' className="w-fit bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
                   About SkillzRevo →
                 </a>
         </div>

@@ -16,6 +16,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
+.custom-bullet li::before {
+  content: '◆︎';
+  margin-right: 0.5rem;
+  color: #fff; /* your brand color */
+}
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #ffffff;

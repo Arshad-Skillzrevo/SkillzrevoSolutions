@@ -1,251 +1,123 @@
 "use client";
+import React from "react";
+import { motion } from "framer-motion";
+import { Briefcase, Users } from "lucide-react";
 
-import React, { useState, useEffect } from "react";
-import DOMPurify from "dompurify";
-
-export default function JobListPage() {
-  const [jobs, setJobs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [pageLoading, setPageLoading] = useState(false); // new state for pagination loading
-
-  // Client-side state
-  const [page, setPage] = useState(1);
-  const [search, setSearch] = useState("");
-  const [locationFilter, setLocationFilter] = useState("");
-  const [jobTypeFilter, setJobTypeFilter] = useState("");
-
-  const jobsPerPage = 5;
-
-  // Fetch jobs on client-side
-  useEffect(() => {
-    const fetchJobs = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(
-          "https://lms.skillzrevo.com/wp-json/wp/v2/jobpost?per_page=50&_fields=id,title,excerpt,date,link,class_list"
-        );
-        const data = await res.json();
-        setJobs(data);
-      } catch (err) {
-        console.error(err);
-      }
-      setLoading(false);
-    };
-
-    fetchJobs();
-  }, []);
-
-  // Scroll to top and show skeleton loader whenever page changes
-  //   useEffect(() => {
-  //     if (!loading) {
-  //       setPageLoading(true);
-  //       window.scrollTo({ top: 0, behavior: "smooth" });
-
-  //       // short timeout to show skeleton effect
-  //       const timer = setTimeout(() => {
-  //         setPageLoading(false);
-  //       }, 300);
-
-  //       return () => clearTimeout(timer);
-  //     }
-  //   }, [page, loading]);
-
-  // Filtered jobs
-  const filteredJobs = jobs.filter((job) => {
-    const title = job.title.rendered.toLowerCase();
-    const excerpt = job.excerpt.rendered.toLowerCase();
-    const searchMatch =
-      title.includes(search.toLowerCase()) ||
-      excerpt.includes(search.toLowerCase());
-
-    const locationMatch = locationFilter
-      ? job.class_list.some((c) =>
-          c.includes(`jobpost_location-${locationFilter}`)
-        )
-      : true;
-
-    const typeMatch = jobTypeFilter
-      ? job.class_list.some((c) =>
-          c.includes(`jobpost_job_type-${jobTypeFilter}`)
-        )
-      : true;
-
-    return searchMatch && locationMatch && typeMatch;
-  });
-
-  const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
-  const currentJobs = filteredJobs.slice(
-    (page - 1) * jobsPerPage,
-    page * jobsPerPage
-  );
-
+export default function CareerShowcase() {
   return (
-    <div className="max-w-5xl flex flex-col gap-2 mx-auto px-4 py-8">
-      <h1 className="text-3xl md:text-5xl heading-oswald uppercase text-[#1d8fff] font-bold mb-6 text-center">
-        Career
-      </h1>
+    <section className="relative overflow-hidden py-20 px-6 md:px-10 lg:px-20 bg-gradient-to-br from-white via-blue-50 to-blue-100">
+      {/* Background accents */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl -z-10 animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl -z-10 animate-pulse" />
 
-      {/* Search / Filter bar */}
-      <div className="flex flex-col md:flex-row gap-4 mb-6 text-gray-600">
-        <input
-          type="text"
-          placeholder="Search by title or keywords"
-          className="border rounded p-2 w-full md:w-1/3"
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            setPage(1);
-          }}
-        />
-        <select
-          className="border rounded p-2 w-full md:w-1/3"
-          value={locationFilter}
-          onChange={(e) => {
-            setLocationFilter(e.target.value);
-            setPage(1);
-          }}
+      {/* Heading Section */}
+      <motion.div
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center max-w-3xl mx-auto mb-12"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold text-[#1d8fff] uppercase heading-oswald">
+          Build Your Career with Us
+        </h2>
+        <p className="mt-4 text-gray-600 text-lg">
+          Explore endless opportunities — whether you want to work with us
+          directly or find your dream job through our staffing network.
+        </p>
+      </motion.div>
+
+      {/* Career Options Grid */}
+      <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        {/* Left Block - Staffing Careers */}
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="relative group overflow-hidden rounded-2xl shadow-xl border border-blue-100 bg-white"
         >
-          <option value="">All Locations</option>
-          <option value="bangalore-karnataka">Bangalore</option>
-          <option value="gurgaon-haryana">Gurgaon</option>
-          <option value="noida-uttar-pradesh">Noida</option>
-          <option value="remote-online">Remote</option>
-        </select>
-        <select
-          className="border rounded p-2 w-full md:w-1/3"
-          value={jobTypeFilter}
-          onChange={(e) => {
-            setJobTypeFilter(e.target.value);
-            setPage(1);
-          }}
+          {/* Background image with overlay */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80')",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#1d8fff] via-[#1d8fff]/80 to-orange-500/90  group-hover:opacity-100 transition" />
+
+          {/* Content */}
+          <div className="relative z-10 p-10 text-white flex flex-col justify-end min-h-[400px]">
+            <div className="mb-4">
+              <Briefcase size={48} className="text-white opacity-90 mb-3" />
+              <h3 className="text-3xl font-semibold mb-2">Explore Jobs</h3>
+              <p className="text-white/90 text-base leading-relaxed">
+                Browse job openings across industries with SkillzRevo Staffing.
+                Whether you’re a fresher or an experienced professional, we’ll
+                help you find the right fit.
+              </p>
+            </div>
+            <a
+              href="https://staffing.skillzrevo.com/careers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block w-fit bg-white text-[#1d8fff] font-semibold px-6 py-3 rounded-full hover:bg-blue-100 transition"
+            >
+              View Openings
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Right Block - Work With Us */}
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="relative group overflow-hidden rounded-2xl shadow-xl border border-blue-100 bg-white"
         >
-          <option value="">All Job Types</option>
-          <option value="full-time">Full-time</option>
-          <option value="part-time">Part-Time</option>
-          <option value="internship">Internship</option>
-        </select>
+          {/* Background image with overlay */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80')",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#1d8fff] via-[#1d8fff]/80 to-orange-500/90 transition group-hover:opacity-100" />
+
+          {/* Content */}
+          <div className="relative z-10 p-10 text-white flex flex-col justify-end min-h-[400px]">
+            <div className="mb-4">
+              <Users size={48} className="text-white opacity-90 mb-3" />
+              <h3 className="text-3xl font-semibold mb-2">Work With Us</h3>
+              <p className="text-white/90 text-base leading-relaxed">
+                Join the SkillzRevo core team — a passionate group shaping the
+                future of IT, Training & Consulting. Grow your career where
+                innovation meets opportunity.
+              </p>
+            </div>
+            <a
+              href="/contact"
+              className="mt-4 inline-block w-fit bg-white text-[#1d8fff] font-semibold px-6 py-3 rounded-full hover:bg-blue-100 transition"
+            >
+              Join Our Team
+            </a>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Job list */}
-      {loading || pageLoading ? (
-        // Skeleton loader
-        <div className="space-y-4">
-          {Array.from({ length: jobsPerPage }).map((_, i) => (
-            <div
-              key={i}
-              className="animate-pulse border rounded p-4 flex flex-col gap-2"
-            >
-              <div className="h-4 bg-gray-300 rounded w-1/3"></div>
-              <div className="h-3 bg-gray-200 rounded w-2/3"></div>
-              <div className="h-3 bg-gray-200 rounded w-1/2"></div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <>
-          {currentJobs.length === 0 ? (
-            <p>No jobs found.</p>
-          ) : (
-            <ul className="space-y-4">
-              {currentJobs.map((job) => (
-                <li
-                  key={job.id}
-                  className="flex max-md:flex-col max-md:items-start items-center justify-between border border-gray-300 rounded p-4 hover:shadow transition"
-                >
-                  <h2 className="text-xl font-semibold mb-1">
-                    <a
-                      href={job.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#1d8fff] hover:underline"
-                      dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(job.title.rendered),
-                      }}
-                    />
-                  </h2>
-
-                  {/* <div
-                    className="text-gray-700 text-sm mb-2 line-clamp-3"
-                    dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(job.excerpt.rendered),
-                    }}
-                  /> */}
-
-                  {/* <div className="text-sm text-gray-500 flex flex-col gap-1">
-                    <span>
-                      Published: {new Date(job.date).toLocaleDateString()}
-                    </span>
-                    <span>
-                      Category:{" "}
-                      {job.class_list.find((c) =>
-                        c.startsWith("jobpost_category-")
-                      )?.replace("jobpost_category-", "N/A")}
-                    </span>
-                    <span>
-                      Type:{" "}
-                      {job.class_list.find((c) =>
-                        c.startsWith("jobpost_job_type-")
-                      )?.replace("jobpost_job_type-", "N/A")}
-                    </span>
-                    <span>
-                      Location(s):{" "}
-                      {job.class_list
-                        .filter((c) => c.startsWith("jobpost_location-"))
-                        .map((c) =>
-                          c.replace("jobpost_location-", "").replace(/-/g, " ")
-                        )
-                        .join(", ")}
-                    </span>
-                  </div> */}
-
-                  <a
-                    href={job.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-2 text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded"
-                  >
-                    Apply Now
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          
-
-          {/* Pagination */}
-          {/* {totalPages > 1 && (
-            <div className="flex justify-center items-center gap-2 mt-6">
-              <button
-                disabled={page === 1}
-                onClick={() => setPage((p) => p - 1)}
-                className="px-3 py-1 border rounded disabled:opacity-50"
-              >
-                Prev
-              </button>
-              <span>
-                Page {page} of {totalPages}
-              </span>
-              <button
-                disabled={page === totalPages}
-                onClick={() => setPage((p) => p + 1)}
-                className="px-3 py-1 border rounded disabled:opacity-50"
-              >
-                Next
-              </button>
-            </div>
-          )} */}
-        </>
-      )}
-
-      <a
-            href="/Career"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg font-bold mx-auto w-fit text-center mt-2 text-white bg-[#1d8fff] hover:bg-blue-600 px-6 py-2 rounded"
-          >
-            See All Jobs
-          </a>
-    </div>
+      {/* Floating accent orbs */}
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+        className="absolute top-20 right-1/3 w-20 h-20 bg-blue-200/40 rounded-full blur-2xl"
+      />
+      <motion.div
+        animate={{ y: [0, 15, 0] }}
+        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+        className="absolute bottom-20 left-1/4 w-16 h-16 bg-blue-300/30 rounded-full blur-2xl"
+      />
+    </section>
   );
 }

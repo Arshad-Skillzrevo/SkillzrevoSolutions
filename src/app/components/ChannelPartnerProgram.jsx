@@ -55,7 +55,7 @@ export default function ChannelPartnerProgram() {
           
             
       
-          <h2 className="text-4xl sm:text-5xl heading-oswald font-bold text-[#1d8fff] mb-8">
+          <h2 className="text-4xl sm:text-5xl heading-oswald font-bold text-[#1d8fff] mb-8 uppercase">
             Channel Sales <br/> Partner Program
           </h2>
 

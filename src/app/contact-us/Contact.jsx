@@ -348,61 +348,7 @@ export default function Contact() {
 
               <MainSegments />
 
-      {/* Enquiries Grid */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <h2 className="text-3xl md:text-5xl heading-oswald uppercase font-bold text-center text-orange-500 mb-10">
-          Enquiries
-        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {[
-            {
-              title: "Corporate Training",
-              icon: BriefcaseIcon,
-              link: "/corporate-training",
-            },
-            {
-              title: "Terms & Conditions",
-              icon: DocumentTextIcon,
-              link: "/TermsandConditions",
-            },
-            {
-              title: "Become our Partner",
-              icon: UserGroupIcon,
-              link: "/channel-partner",
-            },
-            {
-              title: "Become our Instructor",
-              icon: AcademicCapIcon,
-              link: "#",
-            },
-            {
-              title: "Refund Policy",
-              icon: ArrowUturnLeftIcon,
-              link: "/cancellation-refund-policy",
-            },
-            {
-              title: "Careers",
-              icon: BuildingOfficeIcon,
-              link: "https://lms.skillzrevo.com/Careers",
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="border border-gray-200 rounded-lg shadow hover:shadow-lg transition p-6 flex flex-col items-center text-center bg-orange-500"
-            >
-              <item.icon className="h-15 w-15 text-white mb-4" />
-              <h3 className="font-semibold text-white text-lg mb-2">{item.title}</h3>
-              <a
-                href={item.link}
-                className="mt-2 text-white font-semibold hover:underline"
-              >
-                Know More
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Office Locations */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 pb-16">
