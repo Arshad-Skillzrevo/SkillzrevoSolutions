@@ -48,7 +48,7 @@ const Component2 = () => {
     <div className="relative w-full h-[90vh] overflow-hidden flex items-center justify-center  bg-gradient-to-tr from-[#1d8fff]/90 via-blue-500/80 to-orange-600/90">
 
       {/* LEFT TEXT SIDE */}
-      <div className="w-[40%] h-full flex items-center px-10 relative z-10
+      <div className="w-full md:w-[40%] h-full flex items-center px-10 relative z-10
           text-white">
         <motion.div
           key={currentIndex}
@@ -84,7 +84,7 @@ const Component2 = () => {
       </div>
 
       {/* RIGHT VIDEO SLIDER */}
-      <div className="w-[60%] h-full relative flex items-center justify-center px-10">
+      <div className="hidden md:flex w-[60%] h-full relative items-center justify-center px-10">
         {/* NAV BTNS */}
         <div className="absolute inset-y-0 left-3 flex items-center z-20 max-md:hidden">
           <div className="swiper-button-prev bg-white/70 hover:bg-white text-[#1d8fff] p-3 rounded-full shadow cursor-pointer">
