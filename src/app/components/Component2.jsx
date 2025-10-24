@@ -23,7 +23,7 @@ const Component2 = () => {
     },
     {
       videoSrc: "/videos/2.mp4",
-      badge: "TRANSFORMING",
+      badge: "STAFFING",
       title: "EMPOWERING ORGANIZATIONS WITH CUTTING-EDGE SOLUTIONS",
       subtitle:
         "Delivering excellence through innovative training and technology solutions.",
