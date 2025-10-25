@@ -130,7 +130,7 @@ export default function Navbar() {
             {/* Logo */}
             <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Skillzrevo</span>
-            <div className="relative w-[253px] h-[67px]">
+            <div className="relative w-[200px] h-[50px]">
               <Image
                 fill
                 src="/Logo.webp"
