@@ -375,7 +375,7 @@ export default function Contact() {
             company: "SkillzRevo Solutions Pvt Ltd",
             address:
               "9th Main Rd, Sector 7, HSR Layout, Bengaluru, Karnataka - 560102, India",
-            phone: "+91 98452 67765",
+            phone: "+919632347896",
             email: "contact@skillzrevo.com",
           },
         ].map((office, i) => (

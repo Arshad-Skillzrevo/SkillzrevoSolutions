@@ -270,7 +270,7 @@ export default function SkillzRevoFooter() {
                 <div className="flex items-start gap-2">
                   <FaPhone className="mt-1" />
                   <div>
-                    <p>+91 98452 67765</p>
+                    <p>+919632347896</p>
                     <p>Mon–Fri, 9 AM – 6 PM</p>
                   </div>
                 </div>

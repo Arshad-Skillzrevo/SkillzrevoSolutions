@@ -69,7 +69,7 @@ export default function Navbar() {
               className="flex items-center font-medium hover:opacity-75 transition"
               // style={{ color: SECONDARY_ORANGE }}
             >
-              <Phone className="h-4 w-4 mr-1" /> +91 98452 67765
+              <Phone className="h-4 w-4 mr-1" /> +919632347896
             </a>
             <a
               href="mailto:contact@skillzrevo.com"
