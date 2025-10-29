@@ -33,3 +33,56 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+@layer utilities {
+  @keyframes marquee-loop {
+   0%,100% {
+    transform: translateX(0);
+  }
+  99.999% {
+    transform: translateX(-50%);
+  }
+
+  }
+
+  .animate-marquee-loop {
+    animation: marquee-loop 20s linear infinite;
+  }
+    .animate-marquee-loop2 {
+    animation: marquee-loop 10s linear infinite;
+  }
+
+  /* .animate-marquee-loop:hover {
+    animation-play-state: paused;
+  } */
+
+  @keyframes marquee-loop-reverse {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+
+     0%,100% {
+    transform: translateX(-50%);
+  }
+  99.999% {
+    transform: translateX(0);
+  }
+  }
+
+  .animate-marquee-loop-reverse {
+    animation: marquee-loop-reverse 20s linear infinite;
+  }
+
+  /* .animate-marquee-loop-reverse:hover {
+    animation-play-state: paused;
+  } */
+
+
+
+
+}

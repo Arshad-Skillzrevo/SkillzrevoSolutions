@@ -63,7 +63,7 @@ export default function SkillzRevoFooter() {
       {/* --- CTA Section --- */}
       <section className="bg-white w-fit mx-auto py-12 px-8 shadow-lg rounded-lg border border-gray-200 relative top-20">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-blue-500 mb-8">
+          <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-b from-[#1d8fff] to-[#015bb6] bg-clip-text text-transparent heading-oswald mb-4 uppercase">
             Ready to Transform Your Business or Career?
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
@@ -167,7 +167,7 @@ export default function SkillzRevoFooter() {
               <ul className="text-sm space-y-2 custom-bullet">
                 <li>
                   <a
-                    href="/courses/advanced-ai-and-generative-ai-program"
+                    href="/academy.skillzrevo.com/courses/advanced-ai-and-generative-ai-program"
                     className="hover:underline"
                   >
                     Advanced AI and Generative AI
@@ -175,7 +175,7 @@ export default function SkillzRevoFooter() {
                 </li>
                 <li>
                   <a
-                    href="/courses/applied-data-science-with-ai"
+                    href="/academy.skillzrevo.com/courses/applied-data-science-with-ai"
                     className="hover:underline"
                   >
                     Applied Data Science with AI
@@ -183,7 +183,7 @@ export default function SkillzRevoFooter() {
                 </li>
                 <li>
                   <a
-                    href="/courses/applied-data-science-with-python"
+                    href="/academy.skillzrevo.com/courses/applied-data-science-with-python"
                     className="hover:underline"
                   >
                     Applied Data Science with Python
@@ -191,7 +191,7 @@ export default function SkillzRevoFooter() {
                 </li>
                 <li>
                   <a
-                    href="/courses/mastering-in-business-intelligence-program"
+                    href="/academy.skillzrevo.com/courses/mastering-in-business-intelligence-program"
                     className="hover:underline"
                   >
                     Mastering in Business Intelligence
@@ -199,7 +199,7 @@ export default function SkillzRevoFooter() {
                 </li>
                 <li>
                   <a
-                    href="/courses/big-data-with-hadoop-spark-program/"
+                    href="/academy.skillzrevo.com/courses/big-data-with-hadoop-spark-program/"
                     className="hover:underline"
                   >
                     Big Data with Hadoop & Spark Program
@@ -207,7 +207,7 @@ export default function SkillzRevoFooter() {
                 </li>
                 <li>
                   <a
-                    href="/courses/certified-network-security-and-ethical-hacking-specialist-cnsehs"
+                    href="/academy.skillzrevo.com/courses/certified-network-security-and-ethical-hacking-specialist-cnsehs"
                     className="hover:underline"
                   >
                     Certified Network Security and Ethical Hacking Specialist
@@ -215,7 +215,7 @@ export default function SkillzRevoFooter() {
                 </li>
                 <li>
                   <a
-                    href="/courses/mastering-in-cyber-security-forensics"
+                    href="/academy.skillzrevo.com/courses/mastering-in-cyber-security-forensics"
                     className="hover:underline"
                   >
                     Mastering in Cyber Security & Forensics

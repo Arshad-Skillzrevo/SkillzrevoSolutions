@@ -17,7 +17,7 @@ export default function BlogSlider() {
   return (
     <section className="bg-blue-100">
       <section className="md:py-16 py-12  mx-auto">
-        <h2 className="text-3xl md:text-5xl text-[#1d8fff] uppercase heading-oswald font-bold text-center mb-6">
+        <h2 className="text-3xl md:text-5xl xl:text-6xl font-bold bg-gradient-to-b from-[#1d8fff] to-[#015bb6] bg-clip-text text-transparent heading-oswald mb-4 uppercase text-center">
           Latest Blogs
         </h2>
         <Swiper

@@ -7,9 +7,9 @@ export default function CorporateTraining() {
       <div className="max-w-7xl w-full">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight heading-oswald">
+          <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold bg-gradient-to-b from-[#fff] to-[#cccccc] bg-clip-text text-transparent heading-oswald mb-4 px-4 uppercase">
             CORPORATE TRAINING SOLUTIONS
-          </h1>
+          </h2>
           <p className="text-xl text-blue-50">
             Upskill your workforce with enterprise-grade learning
           </p>

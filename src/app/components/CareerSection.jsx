@@ -17,7 +17,7 @@ export default function CareerShowcase() {
         transition={{ duration: 0.8 }}
         className="text-center max-w-3xl mx-auto mb-12"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-[#1d8fff] uppercase heading-oswald">
+        <h2 className="text-3xl md:text-5xl xl:text-6xl font-bold bg-gradient-to-b from-[#1d8fff] to-[#015bb6] bg-clip-text text-transparent heading-oswald mb-4 uppercase">
           Build Your Career with Us
         </h2>
         <p className="mt-4 text-gray-600 text-lg">

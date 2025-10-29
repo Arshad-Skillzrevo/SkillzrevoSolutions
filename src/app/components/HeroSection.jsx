@@ -329,7 +329,7 @@ const HeroSlider = () => {
 
   return (
     <div
-      className="relative w-full h-[80vh] overflow-hidden flex items-center justify-center bg-gradient-to-b from-white to-[#f8fbff]"
+      className="relative w-full h-[80vh] overflow-hidden flex items-center justify-start bg-gradient-to-b from-white to-[#f8fbff]"
       onMouseMove={onMouseMove}
     >
       {/* Parallax Orbs (light tones) */}
@@ -391,7 +391,7 @@ const HeroSlider = () => {
       </div>
 
       {/* LEFT TEXT SIDE */}
-      <div className="w-full md:w-[40%] h-full flex items-center px-6 md:px-10 relative z-10 text-[#1d8fff]">
+      <div className="w-full h-full flex items-center justify-start px-6 md:px-10 relative text-[#1d8fff] z-40">
         <AnimatePresence mode="wait">
           <motion.div
             key={`text-${currentIndex}`}
@@ -420,11 +420,11 @@ const HeroSlider = () => {
               speed={20}
               repeat={0}
               cursor
-              className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight heading-oswald drop-shadow-sm"
+              className="text-3xl md:text-4xl xl:text-6xl font-bold leading-tight heading-oswald md:text-white drop-shadow-sm"
             />
 
             {/* Subtitle */}
-            <p className="text-base md:text-xl text-slate-700/95">
+            <p className="text-base md:text-xl text-gray-600 md:text-slate-400/95">
               {slides[currentIndex].subtitle}
             </p>
 
@@ -448,18 +448,10 @@ const HeroSlider = () => {
       </div>
 
       {/* RIGHT VIDEO SLIDER */}
-      <div className="hidden md:flex w-[60%] h-full relative items-center justify-center px-4 md:px-10">
+      <div className="hidden md:flex w-full h-full absolute items-center justify-center">
         {/* NAV BTNS */}
-        <div className="absolute inset-y-0 left-3 flex items-center z-20 max-md:hidden">
-          <div className="swiper-button-prev bg-white/80 hover:bg-white text-[#1d8fff] p-3 rounded-full shadow cursor-pointer backdrop-blur-sm transition-all active:scale-95">
-            <ChevronLeft />
-          </div>
-        </div>
-        <div className="absolute inset-y-0 right-3 flex items-center z-20 max-md:hidden">
-          <div className="swiper-button-next bg-white/80 hover:bg-white text-[#1d8fff] p-3 rounded-full shadow cursor-pointer backdrop-blur-sm transition-all active:scale-95">
-            <ChevronRight />
-          </div>
-        </div>
+        
+        <div className="absolute inset-0 bg-gradient-to-r from-black z-30 to-[#1d8fff]/30" />
 
         <Swiper
           modules={[Navigation]}
@@ -469,7 +461,7 @@ const HeroSlider = () => {
           onSwiper={(s) => (swiperRef.current = s)}
           onSlideChange={(s) => setCurrentIndex(s.realIndex)}
           allowTouchMove={false}
-          className="w-full h-120 rounded-2xl p-4 md:p-6 bg-white/90 shadow-[0_20px_60px_rgba(16,24,40,0.10)] backdrop-blur-sm"
+          className="w-full h-full rounded-2xl p-4 md:p-6 bg-white/90 shadow-[0_20px_60px_rgba(16,24,40,0.10)] backdrop-blur-sm"
         >
           {slides.map((s, i) => (
             <SwiperSlide key={i} className="relative w-full h-full">
@@ -497,10 +489,10 @@ const HeroSlider = () => {
 
       {/* Brand bar */}
       <div
-        className="absolute bottom-0 w-full z-20 py-2"
+        className="absolute bottom-0 w-full z-30 py-2"
         style={{
           background:
-            "linear-gradient(90deg, rgba(29,143,255,0.25), rgba(255,105,0,0.35))",
+            "linear-gradient(90deg, rgba(29,143,255,0.7), rgba(255,105,0,0.8))",
         }}
       />
 
