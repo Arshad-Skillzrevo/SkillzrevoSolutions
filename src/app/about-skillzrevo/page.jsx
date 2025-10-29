@@ -8,32 +8,6 @@ export const metadata = {
   alternates: {
     canonical: "https://skillzrevo.com/about-skillzrevo/",
   },
-  openGraph: {
-    locale: "en_US",
-    type: "article",
-    url: "https://skillzrevo.com/about-skillzrevo/",
-    siteName: "SkillzRevo",
-    title: "About SkillzRevo - SkillzRevo",
-    description:
-      "SKILLZREVO SOLUTION PVT. LTD Revolutionizing Skills Acquisition is an EdTech Organisation providing an online learning platform for aspiring learners in",
-    images: [
-      {
-        url: "https://skillzrevo.com/wp-content/uploads/2020/08/edumall-shape-grid-dots.png",
-        width: 417,
-        height: 371,
-        alt: "About SkillzRevo",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About SkillzRevo - SkillzRevo",
-    description:
-      "SKILLZREVO SOLUTION PVT. LTD Revolutionizing Skills Acquisition is an EdTech Organisation providing an online learning platform for aspiring learners in",
-    images: [
-      "https://skillzrevo.com/wp-content/uploads/2020/08/edumall-shape-grid-dots.png",
-    ],
-  },
 };
 
 import {
@@ -63,7 +37,13 @@ import {
 } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa6";
 import Image from "next/image";
-import { ArrowRightIcon } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowRightIcon,
+  Sparkles,
+  Target,
+  Users,
+} from "lucide-react";
 
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
@@ -182,14 +162,15 @@ const AboutSkillzrevo = () => {
     {
       title: "Collaboration",
       desc: "We believe in the power of teamwork, building strong partnerships with learners, clients, and industry leaders to achieve shared success.",
-      icon: <FaGlobeAsia className="text-[#ff6a1d] min-w-[40px] min-h-[40px]" />,
+      icon: (
+        <FaGlobeAsia className="text-[#ff6a1d] min-w-[40px] min-h-[40px]" />
+      ),
     },
     {
       title: "Continuous Learning & Growth",
       desc: "We are dedicated to fostering lifelong learning, encouraging adaptability, and empowering individuals to grow in an ever-evolving professional landscape.",
       icon: <FaBook className="text-[#1d8fff] min-w-[40px] min-h-[40px]" />,
     },
-
   ];
 
   const coreValues = [
@@ -256,56 +237,145 @@ const AboutSkillzrevo = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* 1. Hero Section / Company Snapshot */}
-      <div className="flex flex-col bg-gradient-to-tr from-blue-200 via-blue-100 to-orange-300">
-        <section className="flex items-center justify-between px-6 md:pt-8 pt-6">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
-            <div className="flex-1 gap-4 max-md:flex flex-col max-md:items-center text-center md:text-left max-md:py-18">
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-black tracking-tight uppercase leading-tighter heading-oswald">
-                Empowering the Future with Skills, Talent & Technology
-              </h1>
-              <p className="my-6 max-md:mx-5 text-gray-600 text-lg max-sm:text-sm leading-tight tracking-tight">
-                At SkillzRevo Solutions Pvt Ltd, we are redefining how
-                individuals, professionals, and organizations evolve — through
-                cutting-edge training, intelligent staffing solutions, and
-                strategic consulting services.
-              </p>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl"></div>
 
-              <div className="my-6 flex gap-2 sm:gap-10 items-center max-md:justify-center">
-                <a
-                  href="#divisions"
-                  className="flex justify-center items-center gap-2  max-sm:text-sm font-[500] tracking-wide bg-[#1d8fff] border-2 border-[#1d8fff] hover:bg-transparent  text-white sm:px-6 sm:py-3 px-3 py-2 rounded shadow transition hover:text-[#1d8fff]"
-                >
-                  Explore Our Divisions <ArrowRightIcon className="w-5 h-5" />
-                </a>
-                <a
-                  href="/contact-us"
-                  className="flex justify-center items-center gap-2 max-sm:text-sm font-[500] tracking-wide bg-[#1d8fff] border-2 border-[#1d8fff] hover:bg-transparent  text-white sm:px-6 sm:py-3 px-3 py-2 rounded shadow transition hover:text-[#1d8fff]"
-                >
-                  Get in Touch <ArrowRightIcon className="w-5 h-5" />
-                </a>
+          <div className="relative mx-auto px-6 py-16 md:py-24">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Content Side */}
+              <div className="space-y-8 text-center md:text-left">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                  <Sparkles className="w-4 h-4" />
+                  <span>Transforming Futures Since 2024</span>
+                </div>
+
+                {/* Main Heading */}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight uppercase heading-oswald">
+                  Empowering the Future with{" "}
+                  <span className="bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">
+                    Skills, Talent & Technology
+                  </span>
+                </h1>
+
+                {/* Description */}
+                <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
+                  At SkillzRevo Solutions Pvt Ltd, we are redefining how
+                  individuals, professionals, and organizations evolve — through
+                  cutting-edge training, intelligent staffing solutions, and
+                  strategic consulting services.
+                </p>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                  <a
+                    href="/#divisions"
+                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl shadow-lg shadow-blue-600/30 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/40 transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    Explore Our Divisions
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <a
+                    href="/contact-us"
+                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl border-2 border-blue-600 hover:bg-blue-50 transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    Get in Touch
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
+                  <div className="text-center md:text-left">
+                    <div className="text-3xl font-bold text-gray-900">500+</div>
+                    <div className="text-sm text-gray-600 mt-1">
+                      Trained Professionals
+                    </div>
+                  </div>
+                  <div className="text-center md:text-left">
+                    <div className="text-3xl font-bold text-gray-900">50+</div>
+                    <div className="text-sm text-gray-600 mt-1">
+                      Partner Companies
+                    </div>
+                  </div>
+                  <div className="text-center md:text-left">
+                    <div className="text-3xl font-bold text-gray-900">95%</div>
+                    <div className="text-sm text-gray-600 mt-1">
+                      Success Rate
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Image Side */}
+              <div className="relative hidden md:block">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-orange-500/20 rounded-3xl blur-2xl"></div>
+                <div className="relative bg-white rounded-3xl shadow-2xl p-8">
+                  <img
+                    src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169"
+                    alt="Learning illustration"
+                    className="w-full h-auto rounded-2xl"
+                  />
+
+                  {/* Floating Cards */}
+                  <div className="absolute -top-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                        <Target className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-900">
+                          Training
+                        </div>
+                        <div className="text-xs text-gray-500">Excellence</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                        <Users className="w-6 h-6 text-orange-600" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-900">
+                          Staffing
+                        </div>
+                        <div className="text-xs text-gray-500">Solutions</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="relative block max-md:hidden w-[550px]">
-              <Image
-                priority
-                src="/assets/aboutus.webp"
-                alt="Learning illustration"
-                height={550}
-                width={550}
-              />
+          </div>
+        </section>
+
+        {/* Mission Banner */}
+        <section className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItaDJ2LTJoLTJ6bTAgNGgtMnYyaDJ2LTJ6bTQtNGgydjJoLTJ2LTJ6bS00LTRoMnYyaC0ydi0yem00LTRoMnYyaC0ydi0yem0tNCA0aDJ2MmgtMnYtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50"></div>
+
+          <div className="relative max-w-6xl mx-auto px-6 py-12">
+            <div className="flex items-center justify-center gap-4 text-center">
+              <Sparkles className="w-8 h-8 text-orange-300 hidden sm:block" />
+              <p className="text-lg sm:text-xl lg:text-2xl text-white font-semibold leading-relaxed">
+                <span className="text-orange-300 font-bold">SkillzRevo</span>{" "}
+                stands for Skillz + Revolution — embodying our mission to
+                revolutionize skill acquisition, talent solutions, and
+                enterprise consulting in a digital-first economy.
+              </p>
+              <Sparkles className="w-8 h-8 text-orange-300 hidden sm:block" />
             </div>
           </div>
         </section>
       </div>
-      <div className="bg-[#1d8fff]">
-        <span className="block lg:text-2xl text-white font-bold max-w-7xl mx-auto text-center py-4 uppercase">
-          SkillzRevo stands for Skillz + Revolution — embodying our mission to
-          revolutionize skill acquisition, talent solutions, and enterprise
-          consulting in a digital-first economy.
-        </span>
-      </div>
-      <hr className=" border-gray-400" />
 
+
+      
       {/* Main Content Container */}
       <div className="bg-white">
         {/* 2. Who We Are */}
@@ -315,7 +385,7 @@ const AboutSkillzrevo = () => {
             <div className="relative h-60 md:h-full w-[100%]">
               <Image
                 fill
-                src="/assets/about-us.jpg"
+                src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
                 alt="Background Grid"
                 className="object-cover rounded-lg"
                 quality={50}
@@ -386,7 +456,9 @@ const AboutSkillzrevo = () => {
             {/* Closing Text */}
             <p className="text-gray-700 text-lg mt-6 max-w-2xl">
               With a growing global presence, we deliver{" "}
-              <span className="font-semibold text-[#1d8fff]">real results </span>
+              <span className="font-semibold text-[#1d8fff]">
+                real results{" "}
+              </span>
               through a unique mix of innovation, expertise, and hands-on
               experience.
             </p>
@@ -476,32 +548,6 @@ const AboutSkillzrevo = () => {
       {/* <hr className=" border-gray-200" /> */}
 
       <div className="bg-white">
-        {/* 3. Our Divisions */}
-        {/* <div id="divisions" className="my-6 relative bg-gradient-to-tl from-blue-400 via-blue-800 to-blue-400">
-        <div className="absolute inset-0 bg-[url('/BG-GRID.svg')] bg-contain  opacity-20  z-1"></div>
-
-        <section className="relative py-16 max-w-7xl mx-auto px-2 z-20">
-
-          <div className="text-center">
-            <h2 className="text-3xl font-[#1d8fff]  text-white sm:text-5xl heading-oswald">
-              Our Divisions
-            </h2>
-          </div>
-          <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            {divisions.map((division, index) => (
-              <a key={index} href={division.url} className=" flex flex-col items-center text-center p-6 text-[#1d8fff] mb-4 bg-white rounded shadow-lg transform transition-transform duration-300 hover:scale-105">
-                <div className="flex-shrink-0">
-                  <division.icon size={48} style={{ color: '#1d8fff' }} />
-                </div>
-                <div className="mt-4">
-                  <h3 className="text-xl font-bold ">{division.title}</h3>
-                  <p className="mt-2 text-gray-600">{division.description}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
-        </div> */}
 
         <hr id="divisions" className=" border-gray-300" />
 
@@ -810,7 +856,7 @@ const AboutSkillzrevo = () => {
             <div className="grid gap-8 md:grid-cols-2">
               {testimonials.map((testimonial, index) => (
                 <div
-                  key={index}  
+                  key={index}
                   className="bg-white p-6 rounded-lg shadow-lg border-l-4"
                   style={{ borderColor: primaryColor }}
                 >
