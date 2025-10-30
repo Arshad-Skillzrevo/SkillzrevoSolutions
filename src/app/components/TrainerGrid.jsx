@@ -154,7 +154,7 @@ Passionate about knowledge sharing, Uttam is committed to empowering learners in
   {
     id: 12,
     name: "Mr. Rohan Dixit",
-    image: "/Trainers/john-doe.jpg",
+    image: "/Trainers/rohandixit.png",
     description:
       "Rohan Dixit is an experienced Data Science Consultant with deep expertise in Python, SQL, Power BI, and advanced analytics. With over four years of industry experience at leading organizations like Cipla and AstraZeneca, Rohan has a proven track record in predictive modeling, statistical analysis, and data visualization. Renowned for his mentoring skills, Rohan simplifies complex concepts and helps learners achieve their goals with confidence. His hands-on experience in applying analytics to real-world problems makes him an exceptional guide for aspiring data scientists.",
     skills: [],
