@@ -9,6 +9,7 @@ import LearnersReviewSlider from "./components/LearnersReviewSlider";
 import LogoMarquee from "./components/LogoSlider";
 import PartneringCompaniesSlider from "./components/PartneringCompaniesSlider";
 import SuccessStoriesTestimonials from "./components/Success";
+import TrainerGrid from "./components/TrainerGrid";
 import VerticalServices from "./components/VerticalServices";
 import WhoWeAre from "./components/WhoWeAre";
 import WhyChooseSkillzRevo from "./components/WhyChooseSkillzrevo";
@@ -68,8 +69,9 @@ export default function Home() {
       <LearnersReviewSlider/>
       <PartneringCompaniesSlider/>
       {/* <SuccessStoriesTestimonials/> */}
-      <BlogSlider/>
       <JobListPage/>
+      <TrainerGrid/>
+      <BlogSlider/>
 
     </>
   );

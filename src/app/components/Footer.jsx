@@ -91,24 +91,94 @@ export default function SkillzRevoFooter() {
 
       {/* --- Footer Section --- */}
       <footer className="bg-gradient-to-br from-blue-500 to-blue-600 text-white pt-20">
-        <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className=" mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* --- Brand --- */}
-            <div>
+            <div className="">
               <a href="/" className="flex items-center gap-2 mb-4">
                 
                   <img
-              src="/Skillzrevo-footer.webp"
+              src="/footer-white.webp"
               alt="SkillzRevo Logo"
-              className="w-[100%] mb-5 self-center object-cover"
+              className="w-80 mb-5 self-center object-cover"
             />
                
               </a>
 
-              <div className=" px-4">
-              <p className="text-sm mb-4 opacity-90">
+            <div className="flex gap-6">
+              {/* --- Divisions --- */}
+            <div>
+              <h3 className="font-bold text-lg mb-4">Divisions</h3>
+              <ul className="space-y-2 text-sm">
+                {divisions.map((div, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="text-xs">◇</span>
+                    <a href={div.href} className="hover:underline">
+                      {div.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+             {/* --- Partner Links --- */}
+            <div>
+              <h3 className="font-bold text-lg mb-4">Partner With Us</h3>
+              <ul className="space-y-2 text-sm">
+                {partners.map((p, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="text-xs">◇</span>
+                    <a href={p.href} className="hover:underline">
+                      {p.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              
+            </div>
+
+            </div>  
+
+              {/* <div className=" px-4">
+              <p className="text-sm mb-4 text-center opacity-90">
                 Empowering growth through training, staffing, and consulting excellence.
               </p>
+              
+               </div> */}
+            </div>
+
+            
+
+           
+
+
+            {/* --- Contact --- */}
+            <div>
+              <h3 className="font-bold text-lg mb-4">Contact Us</h3>
+              <div className="space-y-3 text-sm opacity-90">
+                <div className="flex items-start gap-2">
+                  <FaMapMarkerAlt className="mt-1 flex-shrink-0" />
+                  <p>
+                    Plot No. 99/1A, Sector-16C, Greater Noida, Uttar Pradesh 201308, India
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FaEnvelope />
+                  <a
+                    href="mailto:contact@skillzrevo.com"
+                    className="hover:underline"
+                  >
+                    contact@skillzrevo.com
+                  </a>
+                </div>
+                <div className="flex items-start gap-2">
+                  <FaPhone className="mt-1" />
+                  <div>
+                    <p>+919632347896</p>
+                    <p>Mon–Fri, 9 AM – 6 PM</p>
+                  </div>
+                </div>
+              </div>
               <div className="flex gap-3 mt-4 text-orange-500">
                 {[
                   { icon: <FaFacebookF />, href: "https://www.facebook.com/skillzrevo/" },
@@ -128,38 +198,6 @@ export default function SkillzRevoFooter() {
                   </a>
                 ))}
               </div>
-               </div>
-            </div>
-
-            {/* --- Divisions --- */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Divisions</h3>
-              <ul className="space-y-2 text-sm">
-                {divisions.map((div, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="text-xs">◇</span>
-                    <a href={div.href} className="hover:underline">
-                      {div.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* --- Partner Links --- */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Partner With Us</h3>
-              <ul className="space-y-2 text-sm">
-                {partners.map((p, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="text-xs">◇</span>
-                    <a href={p.href} className="hover:underline">
-                      {p.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              
             </div>
 
             <div>
@@ -248,34 +286,7 @@ export default function SkillzRevoFooter() {
               </ul>
             </div>
 
-            {/* --- Contact --- */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Contact Us</h3>
-              <div className="space-y-3 text-sm opacity-90">
-                <div className="flex items-start gap-2">
-                  <FaMapMarkerAlt className="mt-1 flex-shrink-0" />
-                  <p>
-                    Plot No. 99/1A, Sector-16C, Greater Noida, Uttar Pradesh 201308, India
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <FaEnvelope />
-                  <a
-                    href="mailto:contact@skillzrevo.com"
-                    className="hover:underline"
-                  >
-                    contact@skillzrevo.com
-                  </a>
-                </div>
-                <div className="flex items-start gap-2">
-                  <FaPhone className="mt-1" />
-                  <div>
-                    <p>+919632347896</p>
-                    <p>Mon–Fri, 9 AM – 6 PM</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
 

@@ -77,7 +77,7 @@ const PartneringCompaniesSlider = () => {
   return (
     <div className="w-full py-15 bg-gradient-to-b from-white via-gray-100 to-white overflow-hidden">
       {/* Scroller container */}
-      <div className="relative max-w-7xl mx-auto px-4">
+      <div className="relative  mx-auto ">
         <div className="text-center mb-8 mx-auto max-w-5xl">
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold bg-gradient-to-b from-[#1d8fff] to-[#015bb6] bg-clip-text text-transparent heading-oswald mb-4 px-4 uppercase text-center">
             Partnering With Companies

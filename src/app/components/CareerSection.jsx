@@ -58,7 +58,7 @@ export default function CareerShowcase() {
               </p>
             </div>
             <a
-              href="https://staffing.skillzrevo.com/careers"
+              href="https://skillzrevotalent.com/jobs"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-block w-fit bg-white text-[#1d8fff] font-semibold px-6 py-3 rounded-full hover:bg-blue-100 transition"
