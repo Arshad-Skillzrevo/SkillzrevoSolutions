@@ -95,7 +95,7 @@ const PartneringCompaniesSlider = () => {
                 key={index}
                 src={logo}
                 alt={`Logo ${index}`}
-                fill
+                
                 className="object-contain  h-full w-full" // Add flex-shrink-0
               />
               </div>
@@ -108,7 +108,7 @@ const PartneringCompaniesSlider = () => {
                 key={index}
                 src={logo}
                 alt={`Logo ${index}`}
-                fill
+                
                 className="object-contain  h-full w-full" // Add flex-shrink-0
               />
               </div>
@@ -120,7 +120,7 @@ const PartneringCompaniesSlider = () => {
                 <img
                   src={logo}
                 alt={`Logo ${index}`}
-                fill
+                
                 className="object-contain  h-full w-full" // Add flex-shrink-0
               />
               </div>

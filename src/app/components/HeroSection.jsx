@@ -1,5 +1,270 @@
+// "use client";
+// import React, { useMemo, useRef, useState } from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation } from "swiper/modules";
+// import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+// import { AnimatePresence, motion } from "framer-motion";
+// import { TypeAnimation } from "react-type-animation";
+// import "swiper/css";
+// import "swiper/css/navigation";
+
+// const HeroSlider = () => {
+//   const swiperRef = useRef(null);
+//   const [currentIndex, setCurrentIndex] = useState(0);
+
+//   const slides = [
+//     {
+//       videoSrc: "/videos/1.mp4",
+//       badge: "REVOLUTIONIZING",
+//       title: "SKILLS, TALENT AND TECHNOLOGY FOR A SMARTER TOMORROW",
+//       subtitle:
+//         "Bridging the gap between learning, careers, and business transformation.",
+//       cta: { text: "Explore Our Training", href: "https://academy.skillzrevo.com" },
+//     },
+//     {
+//       videoSrc: "/videos/2.mp4",
+//       badge: "STAFFING",
+//       title: "EMPOWERING ORGANIZATIONS WITH CUTTING-EDGE SOLUTIONS",
+//       subtitle:
+//         "Delivering excellence through innovative training and technology solutions.",
+//       cta: { text: "Explore Our Staffing", href: "https://www.skillzrevotalent.com/" },
+//     },
+//     {
+//       videoSrc: "/videos/3.mp4",
+//       badge: "INNOVATING",
+//       title: "BUILD THE FUTURE WITH STRATEGIC TALENT DEVELOPMENT",
+//       subtitle: "Creating pathways for success in the digital economy.",
+//       cta: { text: "Explore Our Consulting", href: "https://consulting.skillzrevo.com" },
+//     },
+//   ];
+
+//   const handleTypingComplete = () => {
+//     setTimeout(() => {
+//       swiperRef.current?.slideNext();
+//     }, 2000);
+//   };
+
+//   // Parallax orbs
+//   const [mouse, setMouse] = useState({ x: 0, y: 0 });
+//   const onMouseMove = (e) => {
+//     const rect = e.currentTarget.getBoundingClientRect();
+//     const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5..0.5
+//     const y = (e.clientY - rect.top) / rect.height - 0.5;
+//     setMouse({ x, y });
+//   };
+
+//   // Medium, non-distracting particles
+//   const particles = useMemo(
+//     () =>
+//       Array.from({ length: 160 }).map((_, i) => ({
+//         id: i,
+//         left: `${Math.random() * 100}%`,
+//         size: 3 + Math.floor(Math.random() * 4),
+//         duration: 8 + Math.random() * 7,
+//         delay: Math.random() * 6,
+//         opacity: 0.25 + Math.random() * 0.35,
+//       })),
+//     []
+//   );
+
+//   return (
+//     <div
+//       className="relative w-full h-[80vh] overflow-hidden flex items-center justify-start bg-gradient-to-b from-white to-[#f8fbff]"
+//       onMouseMove={onMouseMove}
+//     >
+//       {/* Parallax Orbs (light tones) */}
+//       <motion.div
+//         aria-hidden
+//         className="hidden md:block absolute -top-24 -right-16 blur-3xl rounded-full"
+//         style={{
+//           width: 360,
+//           height: 360,
+//           background:
+//             "radial-gradient(35% 35% at 50% 50%, rgba(29,143,255,0.45), rgba(29,143,255,0.08) 70%, transparent 100%)",
+//           mixBlendMode: "multiply",
+//         }}
+//         animate={{
+//           x: mouse.x * 24,
+//           y: mouse.y * 16,
+//           scale: 1.05,
+//         }}
+//         transition={{ type: "spring", stiffness: 60, damping: 20, mass: 0.6 }}
+//       />
+//       <motion.div
+//         aria-hidden
+//         className="hidden md:block absolute -bottom-28 -left-24 blur-3xl rounded-full"
+//         style={{
+//           width: 420,
+//           height: 420,
+//           background:
+//             "radial-gradient(35% 35% at 50% 50%, rgba(255,105,0,0.40), rgba(255,105,0,0.08) 70%, transparent 100%)",
+//           mixBlendMode: "multiply",
+//         }}
+//         animate={{
+//           x: -mouse.x * 20,
+//           y: -mouse.y * 12,
+//         }}
+//         transition={{ type: "spring", stiffness: 60, damping: 20, mass: 0.6 }}
+//       />
+
+//       {/* Floating Particles */}
+//       <div className="pointer-events-none absolute inset-0">
+//         {particles.map((p) => (
+//           <span
+//             key={p.id}
+//             className="absolute rounded-full"
+//             style={{
+//               left: p.left,
+//               bottom: -20,
+//               width: p.size,
+//               height: p.size,
+//               opacity: p.opacity,
+//               background:
+//                 p.id % 2 === 0
+//                   ? "rgba(29,143,255,0.9)"
+//                   : "rgba(255,105,0,0.9)",
+//               filter: "blur(0.3px)",
+//               animation: `floatUp ${p.duration}s linear ${p.delay}s infinite`,
+//             }}
+//           />
+//         ))}
+//       </div>
+
+//       {/* LEFT TEXT SIDE */}
+//       <div className="w-full h-full flex items-center justify-start px-6 md:px-10 relative text-[#1d8fff] z-40">
+//         <AnimatePresence mode="wait">
+//           <motion.div
+//             key={`text-${currentIndex}`}
+//             initial={{ opacity: 0, x: -35 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             exit={{ opacity: 0, x: -20 }}
+//             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+//             className="flex flex-col gap-6 max-w-xl"
+//           >
+//             {/* Badge */}
+//             <div
+//               className="flex items-center gap-2 bg-[#1d8fff] text-white px-5 py-2 rounded-xl heading-oswald font-bold text-xl md:text-2xl w-fit shadow-sm"
+//               style={{ boxShadow: "0 6px 20px rgba(29,143,255,0.25)" }}
+//             >
+//               {/* <span
+//                 className="inline-block rounded-full"
+//                 style={{ width: 8, height: 8, background: "white", opacity: 0.9 }}
+//               /> */}
+//               <span>{slides[currentIndex].badge}</span>
+//             </div>
+
+//             {/* Title (Typewriter) */}
+//             <TypeAnimation
+//               key={`type-${currentIndex}`}
+//               sequence={[slides[currentIndex].title, handleTypingComplete]}
+//               speed={20}
+//               repeat={0}
+//               cursor
+//               className="text-3xl md:text-4xl xl:text-6xl font-bold leading-tight heading-oswald md:text-white drop-shadow-sm"
+//             />
+
+//             {/* Subtitle */}
+//             <p className="text-base md:text-xl text-gray-600 md:text-slate-400/95">
+//               {slides[currentIndex].subtitle}
+//             </p>
+
+//             {/* CTA (subtle icon appears on hover, slides from behind text) */}
+//             <a
+//               href={slides[currentIndex].cta.href}
+//               className="group w-fit relative inline-flex items-center gap-3 bg-[#ff6900] hover:bg-[#ff7f24] text-white px-7 py-3.5 rounded-xl text-base md:text-lg font-semibold shadow-lg transition-transform active:scale-[0.98] overflow-hidden"
+//               style={{ boxShadow: "0 10px 24px rgba(255,105,0,0.28)" }}
+//             >
+//               <span className="relative z-[1]">{slides[currentIndex].cta.text}</span>
+//               {/* <span className="absolute right-5 inset-y-0 my-auto flex items-center opacity-0 translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+//                 <ArrowRight size={20} />
+//               </span> */}
+//             </a>
+
+//             <div className="mt-2 text-xs md:text-sm text-slate-500">
+//               No credit card required • Start exploring in minutes
+//             </div>
+//           </motion.div>
+//         </AnimatePresence>
+//       </div>
+
+//       {/* RIGHT VIDEO SLIDER */}
+//       <div className="hidden md:flex w-full h-full absolute items-center justify-center">
+//         {/* NAV BTNS */}
+        
+//         <div className="absolute inset-0 bg-gradient-to-r from-black z-30 to-[#1d8fff]/30" />
+
+//         <Swiper
+//           modules={[Navigation]}
+//           navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
+//           speed={2000}
+//           loop
+//           onSwiper={(s) => (swiperRef.current = s)}
+//           onSlideChange={(s) => setCurrentIndex(s.realIndex)}
+//           allowTouchMove={false}
+//           className="w-full h-full rounded-2xl p-4 md:p-6 bg-white/90 shadow-[0_20px_60px_rgba(16,24,40,0.10)] backdrop-blur-sm"
+//         >
+//           {slides.map((s, i) => (
+//             <SwiperSlide key={i} className="relative w-full h-full">
+//               <motion.div
+//                 key={`vid-${i}-${currentIndex === i}`}
+//                 initial={{ opacity: 0.6, scale: 0.98 }}
+//                 animate={{ opacity: 1, scale: 1 }}
+//                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+//                 className="relative w-full h-full overflow-hidden rounded-xl"
+//               >
+//                 <video
+//                   className="w-full h-full object-cover"
+//                   src={s.videoSrc}
+//                   autoPlay
+//                   loop
+//                   muted
+//                   playsInline
+//                 />
+//                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+//               </motion.div>
+//             </SwiperSlide>
+//           ))}
+//         </Swiper>
+//       </div>
+
+//       {/* Brand bar */}
+//       <div
+//         className="absolute bottom-0 w-full z-30 py-2"
+//         style={{
+//           background:
+//             "linear-gradient(90deg, rgba(29,143,255,0.7), rgba(255,105,0,0.8))",
+//         }}
+//       />
+
+//       {/* Local keyframes */}
+//       <style jsx>{`
+//         @keyframes floatUp {
+//           0% {
+//             transform: translateY(0) scale(1);
+//             opacity: 0;
+//           }
+//           10% {
+//             opacity: 0.6;
+//           }
+//           50% {
+//             opacity: 0.8;
+//           }
+//           100% {
+//             transform: translateY(-110vh) scale(1.05);
+//             opacity: 0;
+//           }
+//         }
+//       `}</style>
+//     </div>
+//   );
+// };
+
+// export default HeroSlider;
+
+
+
 "use client";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
@@ -11,6 +276,7 @@ import "swiper/css/navigation";
 const HeroSlider = () => {
   const swiperRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isClient, setIsClient] = useState(false);
 
   const slides = [
     {
@@ -38,6 +304,11 @@ const HeroSlider = () => {
     },
   ];
 
+  // Set isClient to true after mount
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const handleTypingComplete = () => {
     setTimeout(() => {
       swiperRef.current?.slideNext();
@@ -48,24 +319,24 @@ const HeroSlider = () => {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const onMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5..0.5
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
     setMouse({ x, y });
   };
 
-  // Medium, non-distracting particles
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 160 }).map((_, i) => ({
-        id: i,
-        left: `${Math.random() * 100}%`,
-        size: 3 + Math.floor(Math.random() * 4),
-        duration: 8 + Math.random() * 7,
-        delay: Math.random() * 6,
-        opacity: 0.25 + Math.random() * 0.35,
-      })),
-    []
-  );
+  // Generate particles only on client side
+  const particles = useMemo(() => {
+    if (!isClient) return [];
+    
+    return Array.from({ length: 160 }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      size: 3 + Math.floor(Math.random() * 4),
+      duration: 8 + Math.random() * 7,
+      delay: Math.random() * 6,
+      opacity: 0.25 + Math.random() * 0.35,
+    }));
+  }, [isClient]);
 
   return (
     <div
@@ -107,28 +378,30 @@ const HeroSlider = () => {
         transition={{ type: "spring", stiffness: 60, damping: 20, mass: 0.6 }}
       />
 
-      {/* Floating Particles */}
-      <div className="pointer-events-none absolute inset-0">
-        {particles.map((p) => (
-          <span
-            key={p.id}
-            className="absolute rounded-full"
-            style={{
-              left: p.left,
-              bottom: -20,
-              width: p.size,
-              height: p.size,
-              opacity: p.opacity,
-              background:
-                p.id % 2 === 0
-                  ? "rgba(29,143,255,0.9)"
-                  : "rgba(255,105,0,0.9)",
-              filter: "blur(0.3px)",
-              animation: `floatUp ${p.duration}s linear ${p.delay}s infinite`,
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating Particles - only render on client */}
+      {isClient && (
+        <div className="pointer-events-none absolute inset-0">
+          {particles.map((p) => (
+            <span
+              key={p.id}
+              className="absolute rounded-full"
+              style={{
+                left: p.left,
+                bottom: -20,
+                width: p.size,
+                height: p.size,
+                opacity: p.opacity,
+                background:
+                  p.id % 2 === 0
+                    ? "rgba(29,143,255,0.9)"
+                    : "rgba(255,105,0,0.9)",
+                filter: "blur(0.3px)",
+                animation: `floatUp ${p.duration}s linear ${p.delay}s infinite`,
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       {/* LEFT TEXT SIDE */}
       <div className="w-full h-full flex items-center justify-start px-6 md:px-10 relative text-[#1d8fff] z-40">
@@ -146,10 +419,6 @@ const HeroSlider = () => {
               className="flex items-center gap-2 bg-[#1d8fff] text-white px-5 py-2 rounded-xl heading-oswald font-bold text-xl md:text-2xl w-fit shadow-sm"
               style={{ boxShadow: "0 6px 20px rgba(29,143,255,0.25)" }}
             >
-              {/* <span
-                className="inline-block rounded-full"
-                style={{ width: 8, height: 8, background: "white", opacity: 0.9 }}
-              /> */}
               <span>{slides[currentIndex].badge}</span>
             </div>
 
@@ -168,16 +437,13 @@ const HeroSlider = () => {
               {slides[currentIndex].subtitle}
             </p>
 
-            {/* CTA (subtle icon appears on hover, slides from behind text) */}
+            {/* CTA */}
             <a
               href={slides[currentIndex].cta.href}
               className="group w-fit relative inline-flex items-center gap-3 bg-[#ff6900] hover:bg-[#ff7f24] text-white px-7 py-3.5 rounded-xl text-base md:text-lg font-semibold shadow-lg transition-transform active:scale-[0.98] overflow-hidden"
               style={{ boxShadow: "0 10px 24px rgba(255,105,0,0.28)" }}
             >
               <span className="relative z-[1]">{slides[currentIndex].cta.text}</span>
-              {/* <span className="absolute right-5 inset-y-0 my-auto flex items-center opacity-0 translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-                <ArrowRight size={20} />
-              </span> */}
             </a>
 
             <div className="mt-2 text-xs md:text-sm text-slate-500">
@@ -189,8 +455,6 @@ const HeroSlider = () => {
 
       {/* RIGHT VIDEO SLIDER */}
       <div className="hidden md:flex w-full h-full absolute items-center justify-center">
-        {/* NAV BTNS */}
-        
         <div className="absolute inset-0 bg-gradient-to-r from-black z-30 to-[#1d8fff]/30" />
 
         <Swiper
@@ -260,4 +524,3 @@ const HeroSlider = () => {
 };
 
 export default HeroSlider;
-

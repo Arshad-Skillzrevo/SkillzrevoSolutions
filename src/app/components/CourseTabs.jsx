@@ -16,6 +16,241 @@ import { FaGear } from "react-icons/fa6";
 import { FaBrain } from "react-icons/fa";
 import { CloudIcon } from "@heroicons/react/24/solid";
 
+const CourseCard = ({ course }) => (
+  <div className="bg-white rounded-xl shadow-[0_5px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_25px_rgba(0,0,0,0.12)] border border-gray-100 p-3 overflow-hidden group transition-all duration-300 w-80 flex-shrink-0">
+    <div className="relative w-full h-[190px] rounded-xl overflow-hidden">
+      <Image
+        className="object-cover group-hover:scale-105 transition-transform duration-500"
+        src={course.image}
+        alt={course.title}
+        fill
+        quality={25}
+      />
+
+      <div className="absolute inset-x-0 top-2 flex justify-between px-2">
+        <div className="relative w-20 h-10 rounded bg-white/70 backdrop-blur-sm shadow-sm overflow-hidden">
+          <Image src="/logos/nasscom.webp" alt="" fill />
+        </div>
+        <div className="relative w-20 h-10 rounded bg-white/70 backdrop-blur-sm shadow-sm overflow-hidden">
+          <Image src="/logos/ites.webp" alt="" fill />
+        </div>
+      </div>
+
+      <div className="absolute bottom-2 left-2 flex gap-2 text-xs font-semibold">
+        <div className="flex items-center gap-1 px-2 py-1 bg-white/90 backdrop-blur-sm text-[#1d8fff] rounded-md border border-[#1d8fff]/20">
+          <MdHourglassFull className="text-sm" />
+          <span>{course.duration}</span>
+        </div>
+
+        <div className="flex items-center gap-1 px-2 py-1 bg-white/90 backdrop-blur-sm text-[#ff6900] rounded-md border border-[#ff6900]/20">
+          <FaGear className="text-sm" />
+          <span>{course.skillsCount} Skills</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="py-3 px-1">
+      <h3 className="text-base font-semibold text-slate-900 leading-5 line-clamp-2 h-12">
+        {course.title}
+      </h3>
+
+      <a
+        href={course.link}
+        target="_blank"
+        className="mt-4 block bg-[#1d8fff] hover:bg-[#1476d9] text-white font-semibold py-2 text-center rounded-lg text-sm transition-all duration-300"
+      >
+        View Course
+      </a>
+    </div>
+  </div>
+);
+
+// const CourseCard = ({ course }) => (
+//   <div className="bg-white rounded-sm hover:shadow-2xl shadow-sm border-gray-200 border p-4 overflow-hidden group card-lift-hover w-76 flex-shrink-0">
+//     <div className="relative w-[270px] h-[180px]">
+//       <Image
+//         className="object-cover rounded-sm"
+//         src={course.image}
+//         alt={course.title}
+//         fill
+//         sizes="w-[270px] h-[180px]"
+//         quality={25}
+//         onError={(e) => {
+//           e.target.onerror = null;
+//           e.target.src =
+//             "https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found";
+//         }}
+//       />
+//       <div className="relative w-20 h-10 rounded-sm top-1 left-1">
+//         <Image
+//           src="/logos/nasscom.webp"
+//           alt={course.title}
+//           fill
+//           sizes="w-20 h-10"
+//           className="object-cover rounded-sm object-center "
+//         />
+//       </div>
+//       <div className="absolute w-20 h-10 rounded-sm top-1 right-1">
+//         <Image
+//           src="/logos/ites.webp"
+//           alt={course.title}
+//           fill
+//           sizes="w-20 h-10"
+
+//           className="object-cover rounded-sm object-center bg-white p-px"
+//         />
+//       </div>
+
+//       <div className="absolute bottom-1 left-1 flex flex-wrap justify-start gap-px text-xs font-bold text-orange-600 uppercase">
+//         <div className="flex items-center gap-1 px-2 py-1 bg-orange-100 rounded-l">
+//           <MdHourglassFull className="" />
+//           <span>{course.duration}</span>
+//         </div>
+
+//         <div className="flex items-center gap-1 px-2 py-1 bg-orange-100 rounded-r">
+//           <FaGear className="" />
+//           <span>{course.skillsCount} Skills</span>
+//         </div>
+//       </div>
+//     </div>
+//     <div className="py-1 mt-2 px-1">
+//       <h3 className="text-lg tracking-tight leading-5 font-semibold text-black mb-2 h-16 ">
+//         {course.title}
+//       </h3>
+//       <a
+//         href={course.link}
+//         target="_blank"
+//         className="bg-[#1d8fff] flex justify-center items-center text-white font-bold py-2 px-5 rounded text-sm border border-[#1d8fff] group-hover:bg-white group-hover:text-[#1d8fff]"
+//       >
+//         View Course
+//       </a>
+//     </div>
+//   </div>
+// );
+
+// --- Course Grid Component (for Desktop) ---
+const CourseGrid = ({ courses }) => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+      {courses.map((course) => (
+        <CourseCard key={course.id} course={course} />
+      ))}
+    </div>
+  );
+};
+
+// --- Main App Component ---
+export default function App() {
+  const [activeTab, setActiveTab] = useState("gen-ai");
+  const [openAccordion, setOpenAccordion] = useState("gen-ai");
+
+  const activeTabData = tabData.find((tab) => tab.id === activeTab);
+
+  const toggleAccordion = (id) => {
+    setOpenAccordion(openAccordion === id ? null : id);
+  };
+
+  return (
+    <>
+      <div className="bg-[#eef1f8] min-h-fit text-slate-800 font-sans px-4">
+        <div className="container mx-auto max-md:p-2 py-10 md:py-16">
+          <div className="text-center mb-6">
+            <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold bg-gradient-to-b from-[#1d8fff] to-[#015bb6] bg-clip-text text-transparent heading-oswald mb-4 px-4 uppercase">
+              MASTER IN-DEMAND TECHNOLOGIES <br />
+              WITH EXPERT-LED PROGRAMS
+            </h2>
+            <span className="inline-block w-full h-0.5 bg-gray-200 mt-2"></span>
+          </div>
+
+          {/* --- Desktop Layout (md and up) --- */}
+          <div className="hidden md:flex flex-col md:flex-row md:space-x-8 lg:space-x-12 max-w-7xl mx-auto">
+            {/* Vertical Tab Navigation */}
+            <div className="flex-shrink-0 md:w-1/4 lg:w-1/5 border border-gray-100 rounded">
+              <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible scrollbar-hide md:space-y-2 md:pb-0">
+                {tabData.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex-shrink-0 md:w-full text-left p-4 rounded-xl transition-all duration-300 ease-in-out text-base font-semibold tracking-tight focus:outline-none mr-2 md:mr-0
+                      ${
+                        activeTab === tab.id
+                          ? "bg-gradient-to-r from-[#1d8fff] to-[#015bb6] text-white shadow-[0_8px_25px_rgba(29,143,255,0.4)] scale-[1.02]"
+                          : "bg-white text-slate-600 hover:bg-slate-50 hover:shadow-lg border border-slate-200"
+                      }
+                    `}
+                  >
+                    <div className="flex flex-row gap-3 w-full items-center heading-oswald text-[22px]">
+                      <tab.icon className="min-w-8 size-10" />
+                      {tab.name}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Tab Content Area */}
+            <div className="flex-1 mt-8 md:mt-0 bg-white/50 p-0 rounded-xl shadow-inner">
+              {activeTabData ? (
+                <CourseGrid courses={activeTabData.courses} />
+              ) : (
+                <div className="flex items-center justify-center h-full">
+                  <p className="text-center text-slate-500">
+                    Please select a category.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* --- Mobile Layout (hidden on md and up) --- */}
+          <div className="block md:hidden max-w-xl mx-auto">
+            {tabData.map((tab) => (
+              <div
+  key={tab.id}
+  className="rounded-2xl border border-slate-200 shadow-sm mb-5 bg-white"
+>
+
+                {/* Accordion Header */}
+                <button
+                  onClick={() => toggleAccordion(tab.id)}
+                  className={`flex items-center justify-between w-full p-4 font-bold text-lg rounded-xl tracking-tight transition-all duration-300 ${
+  openAccordion === tab.id
+    ? "bg-gradient-to-r from-[#1d8fff] to-[#015bb6] text-white shadow-[0_6px_20px_rgba(29,143,255,0.35)] scale-[1.01]"
+    : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-50"
+}`}
+
+                >
+                  <div className="flex items-center gap-3">
+                    <tab.icon className="w-6 h-6" />
+                    {tab.name}
+                  </div>
+                  {openAccordion === tab.id ? (
+                    <ChevronUpIcon className="w-6 h-6" />
+                  ) : (
+                    <ChevronDownIcon className="w-6 h-6" />
+                  )}
+                </button>
+                {/* Accordion Content (Course Slider) */}
+                <div
+                  className={`transition-max-height duration-500 ease-in-out overflow-hidden ${
+                    openAccordion === tab.id ? "max-h-96" : "max-h-0"
+                  }`}
+                >
+                  <div className="flex flex-nowrap overflow-x-auto space-x-4 p-4 scrollbar-hide">
+                    {tab.courses.map((course) => (
+                      <CourseCard key={course.id} course={course} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
 // --- Sample Data ---
 const tabData = [
   {
@@ -594,188 +829,3 @@ const tabData = [
     ],
   },
 ];
-
-// --- Course Card Component ---
-const CourseCard = ({ course }) => (
-  <div className="bg-white rounded-sm hover:shadow-2xl shadow-sm border-gray-200 border p-4 overflow-hidden group card-lift-hover w-76 flex-shrink-0">
-    <div className="relative w-[270px] h-[180px]">
-      <Image
-        className="object-cover rounded-sm"
-        src={course.image}
-        alt={course.title}
-        fill
-        sizes="w-[270px] h-[180px]"
-        quality={25}
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src =
-            "https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found";
-        }}
-      />
-      <div className="relative w-20 h-10 rounded-sm top-1 left-1">
-        <Image
-          src="/logos/nasscom.webp"
-          alt={course.title}
-          fill
-          sizes="w-20 h-10"
-          className="object-cover rounded-sm object-center "
-        />
-      </div>
-      <div className="absolute w-20 h-10 rounded-sm top-1 right-1">
-        <Image
-          src="/logos/ites.webp"
-          alt={course.title}
-          fill
-          sizes="w-20 h-10"
-
-          className="object-cover rounded-sm object-center bg-white p-px"
-        />
-      </div>
-
-      <div className="absolute bottom-1 left-1 flex flex-wrap justify-start gap-px text-xs font-bold text-orange-600 uppercase">
-        <div className="flex items-center gap-1 px-2 py-1 bg-orange-100 rounded-l">
-          <MdHourglassFull className="" />
-          <span>{course.duration}</span>
-        </div>
-
-        <div className="flex items-center gap-1 px-2 py-1 bg-orange-100 rounded-r">
-          <FaGear className="" />
-          <span>{course.skillsCount} Skills</span>
-        </div>
-      </div>
-    </div>
-    <div className="py-1 mt-2 px-1">
-      <h3 className="text-lg tracking-tight leading-5 font-semibold text-black mb-2 h-16 ">
-        {course.title}
-      </h3>
-      <a
-        href={course.link}
-        target="_blank"
-        className="bg-[#1d8fff] flex justify-center items-center text-white font-bold py-2 px-5 rounded text-sm border border-[#1d8fff] group-hover:bg-white group-hover:text-[#1d8fff]"
-      >
-        View Course
-      </a>
-    </div>
-  </div>
-);
-
-// --- Course Grid Component (for Desktop) ---
-const CourseGrid = ({ courses }) => {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-      {courses.map((course) => (
-        <CourseCard key={course.id} course={course} />
-      ))}
-    </div>
-  );
-};
-
-// --- Main App Component ---
-export default function App() {
-  const [activeTab, setActiveTab] = useState("gen-ai");
-  const [openAccordion, setOpenAccordion] = useState("gen-ai");
-
-  const activeTabData = tabData.find((tab) => tab.id === activeTab);
-
-  const toggleAccordion = (id) => {
-    setOpenAccordion(openAccordion === id ? null : id);
-  };
-
-  return (
-    <>
-      <div className="bg-[#eef1f8] min-h-fit text-slate-800 font-sans px-4">
-        <div className="container mx-auto max-md:p-2 py-10 md:py-16">
-          <div className="text-center mb-6">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight text-center text-[#1d8fff] heading-oswald">
-              MASTER IN-DEMAND TECHNOLOGIES <br />
-              WITH EXPERT-LED PROGRAMS
-            </h1>
-            <span className="inline-block w-full h-0.5 bg-gray-200 mt-2"></span>
-          </div>
-
-          {/* --- Desktop Layout (md and up) --- */}
-          <div className="hidden md:flex flex-col md:flex-row md:space-x-8 lg:space-x-12 max-w-7xl mx-auto">
-            {/* Vertical Tab Navigation */}
-            <div className="flex-shrink-0 md:w-1/4 lg:w-1/5 border border-gray-100 rounded">
-              <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible scrollbar-hide md:space-y-2 md:pb-0">
-                {tabData.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`flex-shrink-0 md:w-full text-left p-4 rounded transition-all duration-300 ease-in-out text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1d8fff] focus-visible:ring-offset-2 mr-2 md:mr-0 shadow-sm
-                      ${
-                        activeTab === tab.id
-                          ? "bg-[#1d8fff] text-white shadow-lg"
-                          : "bg-white hover:bg-slate-100 hover:shadow-md text-slate-700"
-                      }
-                    `}
-                  >
-                    <div className="flex flex-row gap-3 w-full items-center justify-start heading-oswald tracking-tight text-2xl ">
-                      <tab.icon className="min-w-8 size-10" />
-                      {tab.name}
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Tab Content Area */}
-            <div className="flex-1 mt-8 md:mt-0 bg-white/50 p-0 rounded-xl shadow-inner">
-              {activeTabData ? (
-                <CourseGrid courses={activeTabData.courses} />
-              ) : (
-                <div className="flex items-center justify-center h-full">
-                  <p className="text-center text-slate-500">
-                    Please select a category.
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* --- Mobile Layout (hidden on md and up) --- */}
-          <div className="block md:hidden max-w-xl mx-auto">
-            {tabData.map((tab) => (
-              <div
-                key={tab.id}
-                className="bg-white rounded-lg shadow-md mb-4 overflow-hidden"
-              >
-                {/* Accordion Header */}
-                <button
-                  onClick={() => toggleAccordion(tab.id)}
-                  className={`flex items-center justify-between w-full p-4 font-bold text-lg text-left transition-colors duration-300 ${
-                    openAccordion === tab.id
-                      ? "bg-[#1d8fff] text-white"
-                      : "bg-gray-50 text-slate-700 hover:bg-gray-100"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <tab.icon className="w-6 h-6" />
-                    {tab.name}
-                  </div>
-                  {openAccordion === tab.id ? (
-                    <ChevronUpIcon className="w-6 h-6" />
-                  ) : (
-                    <ChevronDownIcon className="w-6 h-6" />
-                  )}
-                </button>
-                {/* Accordion Content (Course Slider) */}
-                <div
-                  className={`transition-max-height duration-500 ease-in-out overflow-hidden ${
-                    openAccordion === tab.id ? "max-h-96" : "max-h-0"
-                  }`}
-                >
-                  <div className="flex flex-nowrap overflow-x-auto space-x-4 p-4 scrollbar-hide">
-                    {tab.courses.map((course) => (
-                      <CourseCard key={course.id} course={course} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}

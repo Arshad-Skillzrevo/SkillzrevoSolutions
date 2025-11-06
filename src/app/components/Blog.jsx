@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules"; // ✅ import autoplay module
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import Image from "next/image";
 
@@ -11,24 +11,39 @@ export default function BlogSlider() {
   useEffect(() => {
     fetch("https://lms.skillzrevo.com/wp-json/wp/v2/posts?per_page=12&_embed")
       .then((res) => res.json())
-      .then((data) => setPosts(data));
+      .then((data) => setPosts(data))
+      .catch((err) => console.error("Error fetching posts:", err));
   }, []);
+
+  // Don't render Swiper until we have enough posts
+  if (posts.length === 0) {
+    return (
+      <section className="bg-blue-100">
+        <section className="md:py-16 py-12 mx-auto">
+          <h2 className="text-3xl md:text-5xl xl:text-6xl font-bold bg-gradient-to-b from-[#1d8fff] to-[#015bb6] bg-clip-text text-transparent heading-oswald mb-4 uppercase text-center">
+            Latest Blogs
+          </h2>
+          <div className="text-center py-8 text-gray-600">Loading blogs...</div>
+        </section>
+      </section>
+    );
+  }
 
   return (
     <section className="bg-blue-100">
-      <section className="md:py-16 py-12  mx-auto">
+      <section className="md:py-16 py-12 mx-auto">
         <h2 className="text-3xl md:text-5xl xl:text-6xl font-bold bg-gradient-to-b from-[#1d8fff] to-[#015bb6] bg-clip-text text-transparent heading-oswald mb-4 uppercase text-center">
           Latest Blogs
         </h2>
         <Swiper
-          modules={[Autoplay]} // ✅ register module
+          modules={[Autoplay]}
           spaceBetween={20}
           slidesPerView={3}
           autoplay={{
-            delay: 3000, // 3 seconds delay between slides
-            disableOnInteraction: true, // keeps autoplay after user interaction
+            delay: 3000,
+            disableOnInteraction: false,
           }}
-          loop={true} // ✅ continuous loop
+          loop={posts.length >= 3} // Only enable loop if we have enough slides
           breakpoints={{
             320: { slidesPerView: 1 },
             640: { slidesPerView: 2 },
@@ -37,17 +52,16 @@ export default function BlogSlider() {
         >
           {posts.map((post) => (
             <SwiperSlide key={post.id}>
-              <div className="bg-white h-110 shadow-md border border-gray-200  rounded-md m-2 p-2 flex flex-col">
-                {/* Image hidden for now */}
-
+              <div className="bg-white h-110 shadow-md border border-gray-200 rounded-md m-2 p-2 flex flex-col">
                 <img
                   src={
-                    post?.["wp:featuredmedia"]?.[0]?.media_details?.sizes
-                      ?.medium?.file ||
-                    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
+                    post?._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes
+                      ?.medium?.source_url ||
+                    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+                    "/placeholder-image.jpg" // Fallback image
                   }
                   alt={post.title.rendered}
-                  className=" aspect-video rounded-md object-cover"
+                  className="aspect-video rounded-md object-cover"
                 />
                 <div className="">
                   <h3
@@ -63,6 +77,7 @@ export default function BlogSlider() {
                   <a
                     href={`/blog/${post.slug}`}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-blue-600 font-medium mt-2 inline-block"
                   >
                     Read More →
@@ -73,13 +88,14 @@ export default function BlogSlider() {
           ))}
         </Swiper>
 
-        <a
+        {/* <a
           href="/blog"
           target="_blank"
+          rel="noopener noreferrer"
           className="text-white bg-[#1d8fff] font-bold py-3 px-4 rounded-md mx-auto mt-2 w-fit block"
         >
           View All Blogs →
-        </a>
+        </a> */}
       </section>
     </section>
   );

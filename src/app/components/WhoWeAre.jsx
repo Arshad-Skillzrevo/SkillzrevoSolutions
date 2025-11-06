@@ -53,7 +53,7 @@ export default function WhoWeAre() {
           whileInView="visible"
           viewport={{ once: true }}
           custom={0.2}
-          className="w-full lg:w-1/2 max-lg:hidden"
+          className="w-full lg:w-1/2 max-xl:hidden"
         >
           <img
             src="https://images.unsplash.com/photo-1622037022824-0c71d511ef3c?ixlib=rb-4.1.0&auto=format&fit=crop&w=1170&q=80"
@@ -69,7 +69,7 @@ export default function WhoWeAre() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="w-full lg:w-1/2 text-center lg:text-left md:pr-4"
+          className="w-full xl:w-1/2 text-center xl:text-left md:pr-4"
         >
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold bg-gradient-to-b from-[#1d8fff] to-[#015bb6] bg-clip-text text-transparent heading-oswald mb-4 px-4 uppercase">
             WHO WE ARE
