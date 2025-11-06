@@ -137,7 +137,9 @@ export default function Navbar() {
                 alt="Skillzrevo"
                 className="object-contain"
                 fetchPriority="high"
-                quality={60}
+                // quality={50}
+                sizes="w-[200px] h-[50px]"
+                priority={true}
               />
             </div>
             {/* <img

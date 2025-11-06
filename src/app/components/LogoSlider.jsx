@@ -16,7 +16,7 @@ const displayedLogos = [
 
 const LogoMarquee = () => {
   return (
-   <div className="relative w-full pt-25 pb-35 max-md:py-15 bg-[#feede7] overflow-hidden">
+   <div className="relative w-full py-20 max-md:py-15 bg-[#feede7] overflow-hidden">
       {/* <div className="relative inset-0 bg-[url('/semicircle.png')] bg-no-repeat bg-contain  z-10"></div>
        */}
       
@@ -40,7 +40,8 @@ recognized certifications</p> */}
                   src={logo}
                   alt={`Logo ${index}`}
                   className="px-4 py-2 object-contain"
-                  fill
+                  fill={true}
+                  sizes="h-16 md:h-22 w-32 md:w-44"
                 />
               </div>
                          

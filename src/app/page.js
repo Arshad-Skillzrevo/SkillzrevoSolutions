@@ -13,6 +13,7 @@ import TrainerGrid from "./components/TrainerGrid";
 import VerticalServices from "./components/VerticalServices";
 import WhoWeAre from "./components/WhoWeAre";
 import WhyChooseSkillzRevo from "./components/WhyChooseSkillzrevo";
+import CourseTabs from "./components/CourseTabs";
 
 
 export const metadata = {
@@ -59,10 +60,10 @@ export default function Home() {
     <>
       <HeroSlider/>
       {/* <Component2/> */}
-      <WhoWeAre/>
-      <LogoMarquee/>
-      <div id="divisions"/>
+            <div id="divisions"/>
       <VerticalServices/>
+      <LogoMarquee/>
+      <CourseTabs/>
       <CorporateTraining/>
       <ChannelPartnerProgram/>
       <WhyChooseSkillzRevo/>
@@ -70,6 +71,8 @@ export default function Home() {
       <PartneringCompaniesSlider/>
       {/* <SuccessStoriesTestimonials/> */}
       <JobListPage/>
+      <WhoWeAre/>
+
       <TrainerGrid/>
       <BlogSlider/>
 

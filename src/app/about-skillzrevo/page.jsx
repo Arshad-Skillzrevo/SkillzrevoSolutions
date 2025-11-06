@@ -474,7 +474,7 @@ const AboutSkillzrevo = () => {
                 alt="About SkillzRevo"
                 fill
                 className="object-cover rounded-2xl shadow-lg"
-                quality={20}
+                quality={25}
               />
             </div>
 
