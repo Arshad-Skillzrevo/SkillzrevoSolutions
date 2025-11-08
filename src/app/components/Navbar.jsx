@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import Image from "next/image";
+import TopVerticalSwitcher from "./TopVerticalSwitcher";
 
 const PRIMARY_BLUE = "#1d8fff";
 const SECONDARY_ORANGE = "#ff6900";
@@ -59,6 +60,7 @@ export default function Navbar() {
   return (
     <>
     <header className="w-full sticky top-0 z-50">
+      <TopVerticalSwitcher />
       {/* --- Top Bar --- */}
       <div className="hidden md:block bg-[#1d8fff] text-white text-xs">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-10">
