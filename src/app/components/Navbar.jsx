@@ -62,76 +62,17 @@ export default function Navbar() {
     <header className="w-full sticky top-0 z-50">
       <TopVerticalSwitcher />
       {/* --- Top Bar --- */}
-      <div className="hidden md:block bg-[#1d8fff] text-white text-xs">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-10">
-          {/* Left: Contact Info */}
-          <div className="flex space-x-6">
-            <a
-              href="tel:+919845267765"
-              className="flex items-center font-medium hover:opacity-75 transition"
-              // style={{ color: SECONDARY_ORANGE }}
-            >
-              <Phone className="h-4 w-4 mr-1" /> +919632347896
-            </a>
-            <a
-              href="mailto:contact@skillzrevo.com"
-              className="flex items-center font-medium hover:opacity-75 transition"
-              // style={{ color: SECONDARY_ORANGE }}
-            >
-              <Mail className="h-4 w-4 mr-1" /> contact@skillzrevo.com
-            </a>
-          </div>
-
-          {/* Right: Logins & Socials */}
-          <div className="flex items-center space-x-6">
-            
-
-            <div className="flex space-x-1 text-white">
-            <a
-              href="https://www.facebook.com/skillzrevo/"
-              className="hover:text-orange-500 p-2 rounded-md transition-colors duration-200"
-            >
-              <FaFacebookF className="size-5" />
-            </a>
-            <a
-              href="https://x.com/skillzrevo89393"
-              className="hover:text-orange-500 p-2 rounded-md transition-colors duration-200"
-            >
-              <FaTwitter className="size-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/skillzrevo/"
-              className="hover:text-orange-500 p-2 rounded-md transition-colors duration-200"
-            >
-              <FaLinkedinIn className="size-5" />
-            </a>
-            <a
-              href="https://www.instagram.com/skillzrevo"
-              className="hover:text-orange-500 p-2 rounded-md transition-colors duration-200"
-            >
-              <FaInstagram className="size-5" />
-            </a>
-            <a
-              href="https://www.youtube.com/@SkillzRevo"
-              className="hover:text-orange-500 p-2 rounded-md transition-colors duration-200"
-            >
-              <FaYoutube className="size-5" />
-            </a>
-          </div>
-          </div>
-        </div>
-      </div>
+      
 
       {/* --- Main Navbar --- */}
       <nav 
         className="backdrop-blur-md bg-[#fff] text-black shadow-lg transition-all duration-300"
         // style={{ backgroundColor: PRIMARY_BLUE }}
       >
-        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+        <div className="mx-auto flex max-w-8xl items-center justify-between gap-5 px-4 py-3 lg:px-8 xl:px-16 z-50">
+          <div className="flex justify-between items-center ">
             {/* Logo */}
             <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Skillzrevo</span>
             <div className="relative w-[200px] h-[50px]">
               <Image
                 fill
@@ -144,13 +85,9 @@ export default function Navbar() {
                 priority={true}
               />
             </div>
-            {/* <img
-              alt="Skillzrevo"
-              src="/assets/Logo.webp"
-              className="lg:h-full h-12 lg:w-[160px]"
-            /> */}
           </a>
-
+          </div>
+          <div>
             {/* --- Desktop Menu --- */}
             <div className="hidden lg:flex items-center space-x-2 h-full">
               {NAV_LINKS.map((link, i) =>
