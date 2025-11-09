@@ -298,3 +298,202 @@ export default function SkillzRevoFooter() {
     </div>
   );
 }
+
+
+
+// "use client";
+// import {
+//   FaFacebookF,
+//   FaTwitter,
+//   FaLinkedinIn,
+//   FaYoutube,
+//   FaInstagram,
+//   FaMapPin,
+//   FaClock,
+//   FaEnvelope,
+//   FaPhone,
+// } from "react-icons/fa6";
+
+// export default function GlobalFooter({ site = "master" }) {
+//   const year = new Date().getFullYear();
+
+//   const divisions = [
+//     { name: "Academy", url: "https://academy.skillzrevo.com" },
+//     { name: "Staffing", url: "https://talent.skillzrevo.com" },
+//     { name: "Consulting", url: "https://consulting.skillzrevo.com" },
+//   ];
+
+//   const partners = [
+//     {
+//       name: "Training Channel Partner",
+//       url: "https://academy.skillzrevo.com/channel-partner",
+//     },
+//     {
+//       name: "Staffing Channel Partner",
+//       url: "https://talent.skillzrevo.com/channel-partner",
+//     },
+//     {
+//       name: "Consulting Channel Partner",
+//       url: "https://consulting.skillzrevo.com/channel-partner",
+//     },
+//   ];
+
+//   const academyCourses = [
+//     { name: "Advanced AI and Generative AI", url: "https://academy.skillzrevo.com/courses/advanced-ai-and-generative-ai-program" },
+//     { name: "Applied Data Science with Python", url: "https://academy.skillzrevo.com/courses/applied-data-science-with-python" },
+//     { name: "Mastering in Cyber Security & Forensics", url: "https://academy.skillzrevo.com/courses/mastering-in-cyber-security-forensics" },
+//   ];
+
+//   const staffingServices = [
+//     { name: "IT Recruitment", url: "https://talent.skillzrevo.com/it-recruitment" },
+//     { name: "Contract Staffing", url: "https://talent.skillzrevo.com/contract-staffing" },
+//     { name: "Recruitment Process Outsourcing", url: "https://talent.skillzrevo.com/recruitment-process-outsourcing" },
+//     { name: "Executive Search", url: "https://talent.skillzrevo.com/executive-search" },
+//   ];
+
+//   const consultingServices = [
+//     { name: "Business Transformation", url: "https://consulting.skillzrevo.com/business-transformation" },
+//     { name: "IT Strategy & Roadmap", url: "https://consulting.skillzrevo.com/it-strategy-roadmap" },
+//     { name: "Process Optimization", url: "https://consulting.skillzrevo.com/process-optimization" },
+//   ];
+
+//   const isActive = (domain) =>
+//     site.toLowerCase().includes(domain.toLowerCase())
+//       ? "text-[#ff5e14] font-semibold"
+//       : "hover:text-[#ff5e14]";
+
+//   return (
+//     <footer className="bg-[#0e457b] text-white">
+//       {/* --- Social Bar --- */}
+//       <div className="bg-[#1d8fff] py-8 px-4">
+//         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+//           <h2 className="text-2xl md:text-3xl font-bold uppercase text-center md:text-left">
+//             Follow Us on Social Media
+//           </h2>
+//           <div className="flex space-x-2">
+//             {[
+//               { icon: <FaFacebookF />, href: "https://www.facebook.com/skillzrevo/" },
+//               { icon: <FaTwitter />, href: "https://x.com/skillzrevo89393" },
+//               { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/skillzrevo/" },
+//               { icon: <FaInstagram />, href: "https://www.instagram.com/skillzrevo" },
+//               { icon: <FaYoutube />, href: "https://www.youtube.com/@SkillzRevo" },
+//             ].map((s, i) => (
+//               <a
+//                 key={i}
+//                 href={s.href}
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="hover:bg-[#ff5e14] p-2 rounded-md transition-colors duration-200"
+//               >
+//                 {s.icon}
+//               </a>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* --- Main Footer Content --- */}
+//       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-5 gap-8">
+//         {/* Logo + About */}
+//         <div className="bg-[#ff5e14] py-6 px-4 flex flex-col items-center justify-center text-center md:col-span-1">
+//           <img
+//             src="/SkillzRevo_White.webp"
+//             alt="SkillzRevo Logo"
+//             className="w-48 mb-4 object-contain"
+//           />
+//           <p className="text-sm font-light leading-relaxed">
+//             SkillzRevo Solutions Pvt Ltd provides <b>Academy, Staffing,</b> and
+//             <b> Consulting</b> solutions to help individuals and organizations
+//             achieve excellence.
+//           </p>
+//         </div>
+
+//         {/* Academy */}
+//         <div>
+//           <h4 className="text-lg font-bold mb-4">Academy</h4>
+//           <ul className="space-y-2 text-sm">
+//             {academyCourses.map((c, i) => (
+//               <li key={i}>
+//                 <a href={c.url} className={isActive("academy")}>
+//                   {c.name}
+//                 </a>
+//               </li>
+//             ))}
+//             <li>
+//               <a
+//                 href="https://academy.skillzrevo.com/explore-courses"
+//                 className="font-semibold text-white hover:underline mt-2 inline-block"
+//               >
+//                 View All Courses →
+//               </a>
+//             </li>
+//           </ul>
+//         </div>
+
+//         {/* Staffing */}
+//         <div>
+//           <h4 className="text-lg font-bold mb-4">Staffing Services</h4>
+//           <ul className="space-y-2 text-sm">
+//             {staffingServices.map((s, i) => (
+//               <li key={i}>
+//                 <a href={s.url} className={isActive("talent")}>
+//                   {s.name}
+//                 </a>
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+
+//         {/* Consulting */}
+//         <div>
+//           <h4 className="text-lg font-bold mb-4">Consulting Services</h4>
+//           <ul className="space-y-2 text-sm">
+//             {consultingServices.map((c, i) => (
+//               <li key={i}>
+//                 <a href={c.url} className={isActive("consulting")}>
+//                   {c.name}
+//                 </a>
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+
+//         {/* Contact */}
+//         <div>
+//           <h4 className="text-lg font-bold mb-4">Contact Info</h4>
+//           <ul className="space-y-3 text-sm">
+//             <li className="flex items-start gap-2">
+//               <FaMapPin className="mt-1 text-white" />
+//               Plot No. GH01A, Sector 16C, Greater Noida, India
+//             </li>
+//             <li className="flex items-center gap-2">
+//               <FaClock className="text-white" /> Mon–Sat: 9 AM – 8 PM
+//             </li>
+//             <li className="flex items-center gap-2">
+//               <FaEnvelope className="text-white" /> contact@skillzrevo.com
+//             </li>
+//             <li className="flex items-center gap-2">
+//               <FaPhone className="text-white" /> +91 96323 47896
+//             </li>
+//           </ul>
+//         </div>
+//       </div>
+
+//       {/* --- Copyright --- */}
+//       <div className="border-t border-gray-600 py-4 text-center text-xs text-gray-300 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-6">
+//         <p>© {year} SkillzRevo Solutions Pvt Ltd. All Rights Reserved.</p>
+//         <div className="flex gap-4 mt-2 md:mt-0">
+//           <a href="/TermsandConditions" className="hover:underline">
+//             Terms & Conditions
+//           </a>
+//           <a href="/PrivacyPolicy" className="hover:underline">
+//             Privacy Policy
+//           </a>
+//           <a href="/cancellation-refund-policy" className="hover:underline">
+//             Refund Policy
+//           </a>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// }
