@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -19,15 +19,194 @@ import {
 } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 
+const demoTrainers = [
+  {
+    id: 8,
+    name: "Shweta Otari",
+    image: "/Trainers/Shweta-Otari.JPG",
+    description:
+      "A Learning and Development professional with 8 years of experience specializing in technical training, curriculum design, and e-learning development. I’ve created and delivered programs on Python, Cloud, Data Science working closely with SMEs to ensure relevance and industry alignment.I have hands-on experience with LMS management, TNA, ADDIE framework, and tools like Articulate Storyline. I’m passionate about designing engaging learning experiences that bridge skill gaps and enhance workforce capability.",
+    skills: ["Python", "SQL", "ML", "DL"],
+    experience: "8+ Years",
+    students: "200+",
+    linkedin: "https://www.linkedin.com/in/shweta-otari-8681b8b8/",
+  },
+  {
+    id: 1,
+    name: "Mr. Ashish Tiwari",
+    image: "/Trainers/Ashish-Tiwari-Sir.jpeg",
+    description:
+      "Mr. Ashish Tiwari has done his Masters in Al&ML. He is a Data Scientist having experience of over 8+ years. He has trained 500+ data science enthusiasts who are placed in good companies. He has experience in Data Analytics, Python, Machine Learning, Deep Learning, NLP, Generative Al and many more technologies related to Data Science. He has done several projects viz. Prediction of Dormant Customer and its Factor Analysis,Last Mile Connectivity, Data Vizualisation of census data and many more in the field of Data Science and Generative Al.",
+    skills: ["AI", "Machine Learning", "NLP", "Generative AI"],
+    experience: "8+ Years",
+    students: "500+",
+    linkedin: "https://www.linkedin.com/in/ashishtiwari2114/",
+  },
+  {
+    id: 2,
+    name: "Usha Nandhini S",
+    image: "/Trainers/usha.webp",
+    description: `With over 9 years of expertise in computer programming and 2+ years of specialized focus in Data Science, AI, Machine Learning, and Generative AI, I transform complex technologies into powerful business solutions.
+
+My Expertise
+
+As a Senior Subject Matter Expert at L&T EduTech, I design cutting-edge training programs and mentor professionals through hands-on AI projects. My background includes developing LLM-powered chatbots and delivering corporate training in emerging technologies like Prompt Engineering and Natural Language Processing.
+
+What I Deliver
+
+I build intelligent systems that solve real business problems:
+
+Custom AI chatbots that enhance customer experiences
+Predictive analytics frameworks that drive decision-making
+Computer vision solutions for automation and monitoring
+Sentiment analysis systems that uncover valuable insights
+Technical Arsenal
+
+My toolkit includes Python, PySpark, Flask, Django, Streamlit, vector databases (Neo4j, Qdrant, FAISS), visualization tools (Power BI, Tableau), and cloud platforms (AWS, Google Cloud).
+
+Success Stories
+
+I’ve led development of innovative solutions including a personalized IT course recommendation engine, an advanced pothole detection system using YOLO and FastAPI, and a multimodal sentiment analysis platform integrating BERT and CNN models.
+
+My Approach
+
+I excel at bridging technical complexity with practical application, ensuring every solution delivers measurable value. Fluent in Tamil, English, and Telugu, I bring clear communication and collaborative problem-solving to every project.`,
+    skills: ["Data Science", "AI", "Machine Learning", "Generative AI"],
+    experience: "9+ Years",
+    students: "300+",
+    linkedin:
+      "https://www.linkedin.com/in/usshaa47?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    id: 3,
+    name: "Mr. Uttam",
+    image: "/Trainers/Uttam-Grade-Sir.webp",
+    description: `
+    Uttam Grade is a seasoned Data Scientist and Data Science Trainer with extensive expertise in delivering advanced analytics and data-driven solutions across diverse domains, including retail, banking, and technology. With a strong foundation in Mathematics and Data Science, he has successfully trained professionals at leading institutions like Imarticus and Edyoda and conducted impactful live sessions on platforms like YouTube.
+
+Uttam specializes in Machine Learning, Natural Language Processing, Deep Learning, Predictive Modeling, and Statistical Analysis, leveraging his skills to address real-world business challenges. His qualifications include a B.Sc. and M.Sc. in Mathematics, an M.S. in Machine Learning & Artificial Intelligence, and certifications in Python for Data Science, Data Analytics (NIIT), AWS Solution Architecture, Oracle Database, Decision Sciences, and Alteryx Core.
+
+Passionate about knowledge sharing, Uttam is committed to empowering learners in the fields of Data Science and Analytics through quality training and coaching.
+    `,
+    skills: [],
+    experience: "12+ Years",
+    students: "400+",
+    linkedin: "https://www.linkedin.com/in/uttamgrade/",
+  },
+  {
+    id: 4,
+    name: "Dr Lakshmi Sree Kailasam",
+    image: "/Trainers/LakshmiSree.jpg",
+    description: `
+    Dr. Lakshmi has over 16+ years of experience in diverse domains, including ISO, Scrum, Agile and Project Management, Cyber Security, Capital Markets, Healthcare, Consumer Packaged Goods (CPG), Fast-Moving Consumer Goods (FMCG), Retail, HR Analytics, Digital Marketing, Information Technology, Infrastructure Outsourcing, Insurance, Spend Analytics, and Cost Modelling. She has held roles as a Business Analyst, Data Analyst, Business Intelligence Analyst, and Data Visualization Specialist. Dr. Lakshmi holds a Bachelor of Engineering (BE) in Information Technology, an MBA, a Professional Doctorate in Management, and a Doctorate in Management Studies. Currently, she is pursuing studies in Human Rights Law and Cyber Law & Forensics. Additionally, she holds various certifications, including Business Analyst/Business Analytics from Software Technology Group, SQL Server 2012, VB.NET from Software TechnologyGroup, Tableau Desktop from Tableau Software Company, ISO Certification, SharePoint 2007/2010 for Business Users, VBA, Open Office Certification. She is trained in Six Sigma with a Yellow Belt and Green Belt.
+
+
+    `,
+    skills: [
+      "SQL",
+      "Pandas",
+      "Python",
+      "Gen Ai",
+      "Data Science",
+      "BI",
+      "Programming Languages",
+      "Data Visualization",
+      "Cyber Security",
+      "Cloud Computing",
+      "Statistics",
+      "Big Data",
+      "Data Analytics",
+      "Business Analytics",
+    ],
+    experience: "16+ Years",
+    students: "800+",
+    linkedin: "https://www.linkedin.com/in/klakshmisree",
+  },
+  {
+    id: 5,
+    name: "Mrs. Zainab Sidddiqui",
+    image: "/Trainers/Zainab-Siddaqui-Maam.webp",
+    description: `
+   Zainab Siddiqui is a driven and results-oriented Machine Learning Engineer specializing in computer vision, NLP, and reinforcement learning. With hands-on experience in tools like Python, SQL, Tableau, Power BI, and various cloud platforms, she excels at analyzing and visualizing data to empower decision-makers. Zainab holds a Master’s degree from UT Austin in Data Science & Business Analytics, enhancing her technical foundation in data analytics and machine learning. In her current role, she works on reinforcement learning, data augmentation, image classification, clustering, topic modeling, and big data analytics using SQL and Hive queries. Previously, as a Machine Learning Researcher, she contributed to projects involving text summarization, sentiment analysis, and predictive modeling. Her skill set includes computer vision, project management, and team management, and she is proficient in English, Hindi, and Urdu. Zainab’s commitment to continuous learning is reflected in her certifications, including a Post Graduate Program in Data Science and Business Analytics. Recognized for her leadership abilities and academic achievements, she is dedicated to shaping the future of machine learning through innovative projects and effective problem-solving in AI.
+
+
+    `,
+    skills: [
+      "SQL",
+      "Pandas",
+      "Python",
+      "Gen Ai",
+      "Data Science",
+      "BI",
+      "Programming Languages",
+      "Data Visualization",
+      "Cyber Security",
+      "Cloud Computing",
+      "Statistics",
+      "Big Data",
+      "Data Analytics",
+      "Business Analytics",
+    ],
+    experience: "16+ Years",
+    students: "800+",
+    linkedin: "https://www.linkedin.com/in/klakshmisree",
+  },
+  {
+    id: 6,
+    name: "Dr. Santosh Srivastava",
+    image: "/Trainers/santosh.jpg",
+    description:
+      "Dr Santosh Srivastava is a PhD holder and has more than 12 years of experience in Training, Research, and Consultancy as Data Scientist in prestigious organizations including Metagrit Technologies, NIIT Technologies, IIT Roorkee, and ISB Mohali.",
+    skills: [],
+    experience: "12+ Years",
+    students: "200+",
+    linkedin: "#",
+  },
+  {
+    id: 9,
+    name: "Mr. Arihant Jain",
+    image: "/Trainers/Bidhan-Sen-Sir.webp",
+    description:
+      "Mr Arihant is an accomplished Senior Data Scientist with over 12+ years of valuable experience in Machine Learning, Deep Learning, Natural Language Processing (NLP), and Time Series analysis. He is proficient in both Python and R programming languages. Throughout his career, he has worked for esteemed organizations such as CITI Bank, Bank of America, and NIIT Technologies. Furthermore, Mr Arihant has an extensive background as a corporate trainer in the Data Science domain, contributing more than 6+ years to this role. He has delivered training sessions at renowned MNCs like HCL Technologies and C-DAC. Notably, he has also had the privilege of teaching AI and ML courses to students at prestigious institutions like IITs and MIT in the USA. In addition to his training expertise, Mr Arihant possesses valuable experience in creating mock question papers and assignments for placement purposes on behalf of well-known institutes. He has also been actively involved in guiding numerous candidates in their interview preparation and conducting mock interviews. Moreover, he has been catering to international students from countries like the US, the UK, and the Middle East, providing valuable support and mentorship in the field of Data Science.",
+    skills: [],
+    experience: "8+ Years",
+    students: "200+",
+    linkedin:
+      "https://www.linkedin.com/in/bidhan-sen-6589b1b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    id: 7,
+    name: "Mr. Bidhan Sen",
+    image: "/Trainers/arihant.webp",
+    description:
+      "Bidhan Sen is an accomplished data analytics professional with a wealth of experience across tools like Power BI, Tableau, Python, SQL, Excel, and more. His career has led him through roles at Tata Consultancy Services, Brillio Technologies, and Amazon, progressing from System Engineer to Senior Data Engineer. Throughout his journey, Bidhan has developed expertise in managing ETL processes, creating dashboards and reports, conducting in-depth data analysis, and engaging with clients across diverse projects. At Brillio Technologies, he focused on using Power BI and Tableau to create insightful reports, analyze historical sales data, and develop dashboards that guided business strategies. His role at Amazon further highlights his skill in handling end-to-end ETL tasks, root cause analysis, and maintaining effective client communication. Certified as a Mi Microsoft Certified Data Analyst with the PL-300 credential, Bidhan demonstrates a strong commitment to delivering actionable insights and advancing the field of data analytics.",
+    skills: [],
+    experience: "8+ Years",
+    students: "200+",
+    linkedin: "#",
+  },
+
+  {
+    id: 12,
+    name: "Mr. Rohan Dixit",
+    image: "/Trainers/rohandixit.png",
+    description:
+      "Rohan Dixit is an experienced Data Science Consultant with deep expertise in Python, SQL, Power BI, and advanced analytics. With over four years of industry experience at leading organizations like Cipla and AstraZeneca, Rohan has a proven track record in predictive modeling, statistical analysis, and data visualization. Renowned for his mentoring skills, Rohan simplifies complex concepts and helps learners achieve their goals with confidence. His hands-on experience in applying analytics to real-world problems makes him an exceptional guide for aspiring data scientists.",
+    skills: [],
+    experience: "10+ Years",
+    students: "200+",
+    linkedin: "#",
+  },
+];
 
 /* ===== Helpers ===== */
 const truncateText = (str = "", max = 110) =>
   str.length > max ? str.slice(0, max - 1) + "…" : str;
 
 /* subtle entrance + hover variants */
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 20, scale: 0.98 },
-  visible: (i) => ({
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
     scale: 1,
@@ -36,17 +215,14 @@ const cardVariants = {
   hover: { y: -6, transition: { duration: 0.2, ease: "easeOut" } },
 };
 
-/* ===== Demo data (replace with your trainersData) ===== */
-
-
 /* ===== Component ===== */
 export default function TrainersCarousel({
-  trainersData = demoTrainers, // <- plug your own data here
+  trainersData = demoTrainers,
 }) {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [selectedTrainer, setSelectedTrainer] = useState(null);
 
-  const openModal = (t) => setSelectedTrainer(t);
+  const openModal = (t: any) => setSelectedTrainer(t);
   const closeModal = () => setSelectedTrainer(null);
 
   return (
@@ -140,7 +316,10 @@ export default function TrainersCarousel({
                       ? { opacity: [0, 1, 0.8] }
                       : { opacity: 0 }
                   }
-                  transition={{ duration: 0.8, repeat: hoveredCard === trainer.id ? Infinity : 0 }}
+                  transition={{
+                    duration: 0.8,
+                    repeat: hoveredCard === trainer.id ? Infinity : 0,
+                  }}
                 />
 
                 {/* Image */}
@@ -407,185 +586,3 @@ export default function TrainersCarousel({
     </div>
   );
 }
-
-
-
-const demoTrainers = [
-  {
-    id: 8,
-    name: "Shweta Otari",
-    image: "/Trainers/Shweta-Otari.JPG",
-    description:
-      "A Learning and Development professional with 8 years of experience specializing in technical training, curriculum design, and e-learning development. I’ve created and delivered programs on Python, Cloud, Data Science working closely with SMEs to ensure relevance and industry alignment.I have hands-on experience with LMS management, TNA, ADDIE framework, and tools like Articulate Storyline. I’m passionate about designing engaging learning experiences that bridge skill gaps and enhance workforce capability.",
-    skills: ["Python", "SQL", "ML", "DL"],
-    experience: "8+ Years",
-    students: "200+",
-    linkedin: "https://www.linkedin.com/in/shweta-otari-8681b8b8/",
-  },
-  {
-    id: 1,
-    name: "Mr. Ashish Tiwari",
-    image: "/Trainers/Ashish-Tiwari-Sir.jpeg",
-    description:
-      "Mr. Ashish Tiwari has done his Masters in Al&ML. He is a Data Scientist having experience of over 8+ years. He has trained 500+ data science enthusiasts who are placed in good companies. He has experience in Data Analytics, Python, Machine Learning, Deep Learning, NLP, Generative Al and many more technologies related to Data Science. He has done several projects viz. Prediction of Dormant Customer and its Factor Analysis,Last Mile Connectivity, Data Vizualisation of census data and many more in the field of Data Science and Generative Al.",
-    skills: ["AI", "Machine Learning", "NLP", "Generative AI"],
-    experience: "8+ Years",
-    students: "500+",
-    linkedin: "https://www.linkedin.com/in/ashishtiwari2114/",
-  },
-  {
-    id: 2,
-    name: "Usha Nandhini S",
-    image: "/Trainers/usha.webp",
-    description: `With over 9 years of expertise in computer programming and 2+ years of specialized focus in Data Science, AI, Machine Learning, and Generative AI, I transform complex technologies into powerful business solutions.
-
-My Expertise
-
-As a Senior Subject Matter Expert at L&T EduTech, I design cutting-edge training programs and mentor professionals through hands-on AI projects. My background includes developing LLM-powered chatbots and delivering corporate training in emerging technologies like Prompt Engineering and Natural Language Processing.
-
-What I Deliver
-
-I build intelligent systems that solve real business problems:
-
-Custom AI chatbots that enhance customer experiences
-Predictive analytics frameworks that drive decision-making
-Computer vision solutions for automation and monitoring
-Sentiment analysis systems that uncover valuable insights
-Technical Arsenal
-
-My toolkit includes Python, PySpark, Flask, Django, Streamlit, vector databases (Neo4j, Qdrant, FAISS), visualization tools (Power BI, Tableau), and cloud platforms (AWS, Google Cloud).
-
-Success Stories
-
-I’ve led development of innovative solutions including a personalized IT course recommendation engine, an advanced pothole detection system using YOLO and FastAPI, and a multimodal sentiment analysis platform integrating BERT and CNN models.
-
-My Approach
-
-I excel at bridging technical complexity with practical application, ensuring every solution delivers measurable value. Fluent in Tamil, English, and Telugu, I bring clear communication and collaborative problem-solving to every project.`,
-    skills: ["Data Science", "AI", "Machine Learning", "Generative AI"],
-    experience: "9+ Years",
-    students: "300+",
-    linkedin:
-      "https://www.linkedin.com/in/usshaa47?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  },
-  {
-    id: 3,
-    name: "Mr. Uttam",
-    image: "/Trainers/Uttam-Grade-Sir.webp",
-    description: `
-    Uttam Grade is a seasoned Data Scientist and Data Science Trainer with extensive expertise in delivering advanced analytics and data-driven solutions across diverse domains, including retail, banking, and technology. With a strong foundation in Mathematics and Data Science, he has successfully trained professionals at leading institutions like Imarticus and Edyoda and conducted impactful live sessions on platforms like YouTube.
-
-Uttam specializes in Machine Learning, Natural Language Processing, Deep Learning, Predictive Modeling, and Statistical Analysis, leveraging his skills to address real-world business challenges. His qualifications include a B.Sc. and M.Sc. in Mathematics, an M.S. in Machine Learning & Artificial Intelligence, and certifications in Python for Data Science, Data Analytics (NIIT), AWS Solution Architecture, Oracle Database, Decision Sciences, and Alteryx Core.
-
-Passionate about knowledge sharing, Uttam is committed to empowering learners in the fields of Data Science and Analytics through quality training and coaching.
-    `,
-    skills: [],
-    experience: "12+ Years",
-    students: "400+",
-    linkedin: "https://www.linkedin.com/in/uttamgrade/",
-  },
-  {
-    id: 4,
-    name: "Dr Lakshmi Sree Kailasam",
-    image: "/Trainers/LakshmiSree.jpg",
-    description: `
-    Dr. Lakshmi has over 16+ years of experience in diverse domains, including ISO, Scrum, Agile and Project Management, Cyber Security, Capital Markets, Healthcare, Consumer Packaged Goods (CPG), Fast-Moving Consumer Goods (FMCG), Retail, HR Analytics, Digital Marketing, Information Technology, Infrastructure Outsourcing, Insurance, Spend Analytics, and Cost Modelling. She has held roles as a Business Analyst, Data Analyst, Business Intelligence Analyst, and Data Visualization Specialist. Dr. Lakshmi holds a Bachelor of Engineering (BE) in Information Technology, an MBA, a Professional Doctorate in Management, and a Doctorate in Management Studies. Currently, she is pursuing studies in Human Rights Law and Cyber Law & Forensics. Additionally, she holds various certifications, including Business Analyst/Business Analytics from Software Technology Group, SQL Server 2012, VB.NET from Software Technology Group, Tableau Desktop from Tableau Software Company, ISO Certification, SharePoint 2007/2010 for Business Users, VBA, Open Office Certification. She is trained in Six Sigma with a Yellow Belt and Green Belt.
-
-
-    `,
-    skills: [
-      "SQL",
-      "Pandas",
-      "Python",
-      "Gen Ai",
-      "Data Science",
-      "BI",
-      "Programming Languages",
-      "Data Visualization",
-      "Cyber Security",
-      "Cloud Computing",
-      "Statistics",
-      "Big Data",
-      "Data Analytics",
-      "Business Analytics",
-    ],
-    experience: "16+ Years",
-    students: "800+",
-    linkedin: "https://www.linkedin.com/in/klakshmisree",
-  },
-  {
-    id: 5,
-    name: "Mrs. Zainab Sidddiqui",
-    image: "/Trainers/Zainab-Siddaqui-Maam.webp",
-    description: `
-   Zainab Siddiqui is a driven and results-oriented Machine Learning Engineer specializing in computer vision, NLP, and reinforcement learning. With hands-on experience in tools like Python, SQL, Tableau, Power BI, and various cloud platforms, she excels at analyzing and visualizing data to empower decision-makers. Zainab holds a Master’s degree from UT Austin in Data Science & Business Analytics, enhancing her technical foundation in data analytics and machine learning. In her current role, she works on reinforcement learning, data augmentation, image classification, clustering, topic modeling, and big data analytics using SQL and Hive queries. Previously, as a Machine Learning Researcher, she contributed to projects involving text summarization, sentiment analysis, and predictive modeling. Her skill set includes computer vision, project management, and team management, and she is proficient in English, Hindi, and Urdu. Zainab’s commitment to continuous learning is reflected in her certifications, including a Post Graduate Program in Data Science and Business Analytics. Recognized for her leadership abilities and academic achievements, she is dedicated to shaping the future of machine learning through innovative projects and effective problem-solving in AI.
-
-
-    `,
-    skills: [
-      "SQL",
-      "Pandas",
-      "Python",
-      "Gen Ai",
-      "Data Science",
-      "BI",
-      "Programming Languages",
-      "Data Visualization",
-      "Cyber Security",
-      "Cloud Computing",
-      "Statistics",
-      "Big Data",
-      "Data Analytics",
-      "Business Analytics",
-    ],
-    experience: "16+ Years",
-    students: "800+",
-    linkedin: "https://www.linkedin.com/in/klakshmisree",
-  },
-  {
-    id: 6,
-    name: "Dr. Santosh Srivastava",
-    image: "/Trainers/santosh.jpg",
-    description:
-      "Dr Santosh Srivastava is a PhD holder and has more than 12 years of experience in Training, Research, and Consultancy as Data Scientist in prestigious organizations including Metagrit Technologies, NIIT Technologies, IIT Roorkee, and ISB Mohali.",
-    skills: [],
-    experience: "12+ Years",
-    students: "200+",
-    linkedin: "#",
-  },
-  {
-    id: 9,
-    name: "Mr. Arihant Jain",
-    image: "/Trainers/Bidhan-Sen-Sir.webp",
-    description:
-      "Mr Arihant is an accomplished Senior Data Scientist with over 12+ years of valuable experience in Machine Learning, Deep Learning, Natural Language Processing (NLP), and Time Series analysis. He is proficient in both Python and R programming languages. Throughout his career, he has worked for esteemed organizations such as CITI Bank, Bank of America, and NIIT Technologies. Furthermore, Mr Arihant has an extensive background as a corporate trainer in the Data Science domain, contributing more than 6+ years to this role. He has delivered training sessions at renowned MNCs like HCL Technologies and C-DAC. Notably, he has also had the privilege of teaching AI and ML courses to students at prestigious institutions like IITs and MIT in the USA. In addition to his training expertise, Mr Arihant possesses valuable experience in creating mock question papers and assignments for placement purposes on behalf of well-known institutes. He has also been actively involved in guiding numerous candidates in their interview preparation and conducting mock interviews. Moreover, he has been catering to international students from countries like the US, the UK, and the Middle East, providing valuable support and mentorship in the field of Data Science.",
-    skills: [],
-    experience: "8+ Years",
-    students: "200+",
-    linkedin:
-      "https://www.linkedin.com/in/bidhan-sen-6589b1b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  },
-  {
-    id: 7,
-    name: "Mr. Bidhan Sen",
-    image: "/Trainers/arihant.webp",
-    description:
-      "Bidhan Sen is an accomplished data analytics professional with a wealth of experience across tools like Power BI, Tableau, Python, SQL, Excel, and more. His career has led him through roles at Tata Consultancy Services, Brillio Technologies, and Amazon, progressing from System Engineer to Senior Data Engineer. Throughout his journey, Bidhan has developed expertise in managing ETL processes, creating dashboards and reports, conducting in-depth data analysis, and engaging with clients across diverse projects. At Brillio Technologies, he focused on using Power BI and Tableau to create insightful reports, analyze historical sales data, and develop dashboards that guided business strategies. His role at Amazon further highlights his skill in handling end-to-end ETL tasks, root cause analysis, and maintaining effective client communication. Certified as a Mi Microsoft Certified Data Analyst with the PL-300 credential, Bidhan demonstrates a strong commitment to delivering actionable insights and advancing the field of data analytics.",
-    skills: [],
-    experience: "8+ Years",
-    students: "200+",
-    linkedin: "#",
-  },
-
-  {
-    id: 12,
-    name: "Mr. Rohan Dixit",
-    image: "/Trainers/rohandixit.png",
-    description:
-      "Rohan Dixit is an experienced Data Science Consultant with deep expertise in Python, SQL, Power BI, and advanced analytics. With over four years of industry experience at leading organizations like Cipla and AstraZeneca, Rohan has a proven track record in predictive modeling, statistical analysis, and data visualization. Renowned for his mentoring skills, Rohan simplifies complex concepts and helps learners achieve their goals with confidence. His hands-on experience in applying analytics to real-world problems makes him an exceptional guide for aspiring data scientists.",
-    skills: [],
-    experience: "10+ Years",
-    students: "200+",
-    linkedin: "#",
-  },
-];

@@ -3,6 +3,9 @@ const nextConfig = {
 
     images: {
     qualities: [25, 50, 75],
+    remotePatterns: [
+      new URL('https://images.unsplash.com/**'),
+    ],
   },
 };
 
