@@ -77,9 +77,18 @@ const nextConfig = {
     ];
   },
 
-  images: {
-    qualities: [25, 50, 75],
-    remotePatterns: [new URL("https://images.unsplash.com/**")],
+ images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "academy.skillzrevo.com", // if you ever serve images from your domain
+      },
+    ],
+    unoptimized: true,  // (optional) ensure optimization stays on
   },
 };
 
