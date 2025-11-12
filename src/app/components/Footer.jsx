@@ -20,7 +20,7 @@ const NAV_LINKS = [
     title: "Divisions",
     dropdown: [
       { title: "Academy", href: "https://academy.skillzrevo.com" },
-      { title: "Staffing", href: "https://www.skillzrevotalent.com/" },
+      { title: "Staffing", href: "https://www.talent.skillzrevo.com/" },
       { title: "Consulting", href: "https://consulting.skillzrevo.com" },
     ],
   },
@@ -32,7 +32,7 @@ const NAV_LINKS = [
     title: "Partner with us",
     dropdown: [
       { title: "Academy Partner", href: "https://academy.skillzrevo.com/channel-partner" },
-      { title: "Staffing Partner", href: "https://www.skillzrevotalent.com/channel-partner" },
+      { title: "Staffing Partner", href: "https://www.talent.skillzrevo.com/channel-partner" },
       { title: "Consulting Partner", href: "https://consulting.skillzrevo.com/channel-partner/" },
     ],
   },
@@ -40,17 +40,17 @@ const NAV_LINKS = [
 ];
 
 const STAFFING_LINKS = [
-  { label: "IT Recruitment", href: "https://www.skillzrevotalent.com/it-recruitment" },
-  { label: "Contract Staffing", href: "https://www.skillzrevotalent.com/contract-staffing" },
-  { label: "Permanent Staffing", href: "https://www.skillzrevotalent.com/permanent-staffing" },
-  { label: "Remote Staffing & Offshore Teams", href: "https://www.skillzrevotalent.com/remote-staffing-offshore-teams" },
-  { label: "Recruitment Process Outsourcing", href: "https://www.skillzrevotalent.com/recruitment-process-outsourcing" },
-  { label: "Campus & Fresher Hiring", href: "https://www.skillzrevotalent.com/campus-fresher-hiring" },
-  { label: "Train-to-Hire", href: "https://www.skillzrevotalent.com/train-to-hire" },
-  { label: "Contact-to-Hire", href: "https://www.skillzrevotalent.com/contact-to-hire" },
-  { label: "Bulk Hiring", href: "https://www.skillzrevotalent.com/bulk-hiring" },
-  { label: "Executive Search", href: "https://www.skillzrevotalent.com/executive-search" },
-  { label: "Vendor Management Solutions (VMS)", href: "https://www.skillzrevotalent.com/vendor-management-solutions" },
+  { label: "IT Recruitment", href: "https://www.talent.skillzrevo.com/it-recruitment" },
+  { label: "Contract Staffing", href: "https://www.talent.skillzrevo.com/contract-staffing" },
+  { label: "Permanent Staffing", href: "https://www.talent.skillzrevo.com/permanent-staffing" },
+  { label: "Remote Staffing & Offshore Teams", href: "https://www.talent.skillzrevo.com/remote-staffing-offshore-teams" },
+  { label: "Recruitment Process Outsourcing", href: "https://www.talent.skillzrevo.com/recruitment-process-outsourcing" },
+  { label: "Campus & Fresher Hiring", href: "https://www.talent.skillzrevo.com/campus-fresher-hiring" },
+  { label: "Train-to-Hire", href: "https://www.talent.skillzrevo.com/train-to-hire" },
+  { label: "Contact-to-Hire", href: "https://www.talent.skillzrevo.com/contact-to-hire" },
+  { label: "Bulk Hiring", href: "https://www.talent.skillzrevo.com/bulk-hiring" },
+  { label: "Executive Search", href: "https://www.talent.skillzrevo.com/executive-search" },
+  { label: "Vendor Management Solutions (VMS)", href: "https://www.talent.skillzrevo.com/vendor-management-solutions" },
 ];
 
 
@@ -74,7 +74,7 @@ export default function SkillzRevoFooter() {
               Our Academy <FaArrowRight className="text-sm" />
             </a>
             <a
-              href="https://www.skillzrevotalent.com/"
+              href="https://www.talent.skillzrevo.com/"
               className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-md flex items-center gap-2 transition-all duration-300 hover:shadow-lg"
             >
               Staffing Services <FaArrowRight className="text-sm" />

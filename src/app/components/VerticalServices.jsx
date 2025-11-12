@@ -43,7 +43,7 @@ const cards = [
     title: "SKILLZREVO TALENT",
     subtitle: "STAFFING & WORKFORCE SOLUTIONS",
     icon: <Users2 className="w-9 h-9 text-white" />,
-    href: "https://skillzrevotalent.com",
+    href: "https://talent.skillzrevo.com",
     color: "#ff6900",
     accent: "#1d8fff",
     gradient: "from-orange-50 via-white to-blue-50",

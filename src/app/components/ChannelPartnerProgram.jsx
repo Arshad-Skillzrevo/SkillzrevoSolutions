@@ -25,7 +25,7 @@ export default function ChannelPartnerProgram() {
       title: "Consulting Partners",
       icon: <FaUserTie className="text-white text-2xl" />,
       color: "from-orange-500 to-orange-600",
-      link: "https://skillzrevotalent.com/channel-partner",
+      link: "https://talent.skillzrevo.com/channel-partner",
       description: "Expand your consulting services with our expertise",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop"
     },

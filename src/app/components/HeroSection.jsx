@@ -27,7 +27,7 @@
 //       title: "EMPOWERING ORGANIZATIONS WITH CUTTING-EDGE SOLUTIONS",
 //       subtitle:
 //         "Delivering excellence through innovative training and technology solutions.",
-//       cta: { text: "Explore Our Staffing", href: "https://www.skillzrevotalent.com/" },
+//       cta: { text: "Explore Our Staffing", href: "https://www.talent.skillzrevo.com/" },
 //     },
 //     {
 //       videoSrc: "/videos/3.mp4",
@@ -293,7 +293,7 @@ const HeroSlider = () => {
       title: "EMPOWERING ORGANIZATIONS WITH CUTTING-EDGE SOLUTIONS",
       subtitle:
         "Delivering excellence through innovative training and technology solutions.",
-      cta: { text: "Explore Our Staffing", href: "https://www.skillzrevotalent.com/" },
+      cta: { text: "Explore Our Staffing", href: "https://www.talent.skillzrevo.com/" },
     },
     {
       videoSrc: "/videos/3.mp4",

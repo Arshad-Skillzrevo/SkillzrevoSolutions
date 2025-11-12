@@ -74,7 +74,7 @@ const AboutSkillzrevo = () => {
         "Remote & offshore team hiring",
         "Executive & leadership hiring",
       ],
-      cta: { label: "Hire Talent →", href: "https://skillzrevotalent.com/" },
+      cta: { label: "Hire Talent →", href: "https://talent.skillzrevo.com/" },
     },
     {
       title: "SkillzRevo Consulting (Digital Transformation & Analytics)",
@@ -105,7 +105,7 @@ const AboutSkillzrevo = () => {
       title: "SkillzRevo Talent",
       description:
         "We specialize in strategic staffing, recruitment, and talent management solutions. Whether it’s project-based, contract, or permanent hiring—we help organizations build high-performance teams.",
-      url: "https://skillzrevotalent.com/",
+      url: "https://talent.skillzrevo.com/",
     },
     {
       icon: FaCloud,

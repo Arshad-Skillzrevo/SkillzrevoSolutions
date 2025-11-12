@@ -28,7 +28,7 @@ const NAV_LINKS = [
     href: "#divisions",
     dropdown: [
       { title: "Academy", href: "https://academy.skillzrevo.com" },
-      { title: "Staffing", href: "https://www.skillzrevotalent.com/" },
+      { title: "Staffing", href: "https://www.talent.skillzrevo.com/" },
       { title: "Consulting", href: "https://consulting.skillzrevo.com" },
     ],
   },
@@ -38,7 +38,7 @@ const NAV_LINKS = [
     href: "#partner",
     dropdown: [
       { title: "Academy Partner", href: "https://academy.skillzrevo.com/channel-partner" },
-      { title: "Staffing Partner", href: "https://www.skillzrevotalent.com/channel-partner" },
+      { title: "Staffing Partner", href: "https://www.talent.skillzrevo.com/channel-partner" },
       { title: "Consulting Partner", href: "https://consulting.skillzrevo.com/channel-partner/" },
     ],
   },
