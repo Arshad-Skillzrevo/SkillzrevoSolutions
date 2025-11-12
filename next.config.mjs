@@ -8,16 +8,11 @@ const nextConfig = {
         destination: "https://academy.skillzrevo.com/explore-courses",
         permanent: true,
       },
-      {
-        source: "/about-skillzrevo",
-        destination: "https://academy.skillzrevo.com/about-skillzrevo",
-        permanent: true,
-      },
-      {
-        source: "/contact-us",
-        destination: "https://academy.skillzrevo.com/contact-us",
-        permanent: true,
-      },
+          {
+        "source": "/work-with-us",
+        "destination": "https://academy.skillzrevo.com/work-with-us",
+        "permanent": true
+    },
       {
         source: "/corporate-training",
         destination: "https://academy.skillzrevo.com/corporate-training",

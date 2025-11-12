@@ -24,15 +24,16 @@ const CourseCard = ({ course }) => (
         src={course.image}
         alt={course.title}
         fill
+        sizes="100%"
         quality={25}
       />
 
       <div className="absolute inset-x-0 top-2 flex justify-between px-2">
         <div className="relative w-20 h-10 rounded bg-white/70 backdrop-blur-sm shadow-sm overflow-hidden">
-          <Image src="/logos/nasscom.webp" alt="" fill />
+          <Image src="/logos/nasscom.webp" alt="" fill sizes="w-20 h-10" />
         </div>
         <div className="relative w-20 h-10 rounded bg-white/70 backdrop-blur-sm shadow-sm overflow-hidden">
-          <Image src="/logos/ites.webp" alt="" fill />
+          <Image src="/logos/ites.webp" alt="" fill sizes="w-20 h-10" />
         </div>
       </div>
 
@@ -206,19 +207,17 @@ export default function App() {
           <div className="block md:hidden max-w-xl mx-auto">
             {tabData.map((tab) => (
               <div
-  key={tab.id}
-  className="rounded-2xl border border-slate-200 shadow-sm mb-5 bg-white"
->
-
+                key={tab.id}
+                className="rounded-2xl border border-slate-200 shadow-sm mb-5 bg-white"
+              >
                 {/* Accordion Header */}
                 <button
                   onClick={() => toggleAccordion(tab.id)}
                   className={`flex items-center justify-between w-full p-4 font-bold text-lg rounded-xl tracking-tight transition-all duration-300 ${
-  openAccordion === tab.id
-    ? "bg-gradient-to-r from-[#1d8fff] to-[#015bb6] text-white shadow-[0_6px_20px_rgba(29,143,255,0.35)] scale-[1.01]"
-    : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-50"
-}`}
-
+                    openAccordion === tab.id
+                      ? "bg-gradient-to-r from-[#1d8fff] to-[#015bb6] text-white shadow-[0_6px_20px_rgba(29,143,255,0.35)] scale-[1.01]"
+                      : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-50"
+                  }`}
                 >
                   <div className="flex items-center gap-3">
                     <tab.icon className="w-6 h-6" />
