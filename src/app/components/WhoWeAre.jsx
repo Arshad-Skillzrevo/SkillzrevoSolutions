@@ -129,7 +129,7 @@ export default function WhoWeAre() {
             whileInView="visible"
             viewport={{ once: true }}
             custom={3}
-            href="/about-skillzrevo"
+            href="/about-us"
             className="mx-4 inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-3.5 rounded-lg text-base md:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             About SkillzRevo →

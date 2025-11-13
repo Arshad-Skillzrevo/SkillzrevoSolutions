@@ -22,7 +22,7 @@ const SECONDARY_ORANGE = "#ff6900";
 
 const NAV_LINKS = [
   { title: "Home", href: "/" },
-  { title: "About Us", href: "/about-skillzrevo" },
+  { title: "About Us", href: "/about-us" },
   {
     title: "Divisions",
     href: "#divisions",
@@ -69,8 +69,8 @@ export default function Navbar() {
         className="backdrop-blur-md bg-[#fff] text-black shadow-lg transition-all duration-300"
         // style={{ backgroundColor: PRIMARY_BLUE }}
       >
-        <div className="mx-auto flex max-w-8xl items-center justify-between gap-5 px-4 py-3 lg:px-8 xl:px-16 z-50">
-          <div className="flex justify-between items-center ">
+        <div className="mx-auto flex max-w-8xl items-center justify-between gap-5 px-4 py-3 lg:px-8  z-50">
+          <div className="flex justify-between items-center md:hidden">
             {/* Logo */}
             <a href="/" className="-m-1.5 p-1.5">
             <div className="relative w-[200px] h-[50px]">
@@ -89,7 +89,7 @@ export default function Navbar() {
           </div>
           <div>
             {/* --- Desktop Menu --- */}
-            <div className="hidden lg:flex items-center space-x-2 h-full">
+            <div className="hidden lg:flex items-center justify-between w-full space-x-2 h-full">
               {NAV_LINKS.map((link, i) =>
                 link.dropdown ? (
                   <div
