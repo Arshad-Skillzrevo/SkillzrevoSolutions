@@ -41,6 +41,7 @@ import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import { Oswald } from "next/font/google";
 
 import FounderSection from "./FounderSection";
+import WhyChooseSkillzRevo from "../components/WhyChooseSkillzrevo";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -456,6 +457,8 @@ export default function AboutSkillzrevo() {
         </div>
       </section>
 
+      <WhyChooseSkillzRevo/>
+
       {/* MISSION VISION VALUES - Full Width */}
       <section className="py-24 bg-white">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-16 xl:px-24">
@@ -463,7 +466,7 @@ export default function AboutSkillzrevo() {
           <div className="grid lg:grid-cols-3 gap-8 mb-20">
             <div className="relative group h-full">
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition" />
-              <div className="relative bg-white rounded-3xl p-10 shadow-xl border border-gray-100">
+              <div className="relative bg-white rounded-3xl p-10 shadow-xl border border-gray-100 h-full">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-6">
                   <FaBullseye className="text-white text-3xl" />
                 </div>
@@ -480,7 +483,7 @@ export default function AboutSkillzrevo() {
 
             <div className="relative group h-full">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition" />
-              <div className="relative bg-white rounded-3xl p-10 shadow-xl border border-gray-100">
+              <div className="relative bg-white rounded-3xl p-10 shadow-xl border border-gray-100 h-full">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-6">
                   <FaGlobe className="text-white text-3xl" />
                 </div>
@@ -496,7 +499,7 @@ export default function AboutSkillzrevo() {
 
             <div className="relative group h-full">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition" />
-              <div className="relative bg-white rounded-3xl p-10 shadow-xl border border-gray-100">
+              <div className="relative bg-white rounded-3xl p-10 shadow-xl border border-gray-100 h-full">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6">
                   <FaHandshake className="text-white text-3xl" />
                 </div>
@@ -686,7 +689,7 @@ export default function AboutSkillzrevo() {
       </section>
 
       {/* FOUNDER SECTION */}
-      <FounderSection />
+      {/* <FounderSection /> */}
 
       {/* CAREERS - Full Width */}
       <section className="py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-orange-600 relative overflow-hidden">

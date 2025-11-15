@@ -39,7 +39,7 @@ const FounderSection = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 via-white to-blue-50 py-24 lg:py-32 overflow-hidden">
+    <section className="bg-gradient-to-b from-gray-50 via-white to-blue-50 py-16 lg:py-24 overflow-hidden">
       {/* Main Content Grid */}
       <div className="max-w-[1600px] mx-auto ">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24">
@@ -53,18 +53,18 @@ const FounderSection = () => {
             className="relative"
           >
             {/* Decorative Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-orange-500/20 rounded-[3rem] blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-orange-500/20 to-orange-500/20 rounded-[3rem] blur-3xl" />
 
             {/* Main Image Container */}
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-blue-600 to-purple-600 rounded-[3rem] opacity-20 blur-2xl" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-blue-600 to-orange-600 rounded-[3rem] opacity-20 blur-2xl" />
               
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
                 <Image
-                  src="/founder.jpg"
-                  width={700}
-                  height={800}
-                  className="object-cover w-full h-[500px] lg:h-[600px]"
+                  src="/team/1.jpg"
+                  width={300}
+                  height={500}
+                  className="object-cover object-top scale-125 w-full h-[500px] lg:h-[600px]"
                   alt="Rakesh Singh - Founder & CEO"
                 />
                 
