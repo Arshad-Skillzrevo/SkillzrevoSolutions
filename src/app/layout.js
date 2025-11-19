@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 import { Oswald } from "next/font/google";
 import SkillzRevoFooter from "./components/Footer";
+import FloatingWidget from "./components/FloatingWidget";
 const oswald = Oswald({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"], // choose weights you need
@@ -64,6 +65,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
       <Navbar/>
+      <FloatingWidget/>
 
         {children}
 
