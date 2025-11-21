@@ -1,0 +1,40 @@
+# robots.txt for https://www.skillzrevo.com
+# Allow search engines to crawl the public site while blocking common private/utility paths.
+User-agent: *
+# Allow everything by default then restrict sensitive/duplicate or staging areas
+Allow: /
+
+# Disallow admin, internal and non-public paths
+Disallow: /admin/
+Disallow: /administrator/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /login
+Disallow: /register
+Disallow: /user/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /order/
+Disallow: /account/
+Disallow: /phpmyadmin/
+Disallow: /*?sessionid=
+Disallow: /*?s=         # block internal search result pages (if present)
+Disallow: /*?utm_      # block tracking-parameter URL variants
+Disallow: /thank-you
+Disallow: /404
+Disallow: /test/
+# If your site exposes APIs that shouldn't be indexed
+Disallow: /api/
+Disallow: /wp-json/
+
+# Crawl guidelines (Bing respects Crawl-delay; Google ignores it)
+Crawl-delay: 5
+
+# Prefer canonical host (optional)
+Host: www.skillzrevo.com
+
+# Sitemap (replace with the actual sitemap URL if different)
+Sitemap: https://www.skillzrevo.com/sitemap.xml
